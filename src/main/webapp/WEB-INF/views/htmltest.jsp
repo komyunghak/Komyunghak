@@ -3,18 +3,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-p {color: red; text-align: center;}
-</style>
+<script src="/resources/js/user.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-	<p>1일부 내용의 스타일을 변경할 때 전체
-		페이지의 내용을 한꺼번에 수정할 수 있도록</p>
-	<p>2일부 내용의 스타일을 변경할 때 전체
-		페이지의 내용을 한꺼번에 수정할 수 있도록</p>
-	<p>3일부 내용의 스타일을 변경할 때 전체
-		페이지의 내용을 한꺼번에 수정할 수 있도록</p>
-</body>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>CSS3 Property Basic</title>
+		<Style>
+			h1 { background-color: rgba(255, 255, 0, 0.5); }
+			</Style>
+			</head>
+			<body>
+				<h1>Headd0er -1</h1>
+				<h2>Headd0er -2</h2>
+				<h3>Headd0er -3</h3>
+				<h4>Headd0er -4</h4>
+				<h5>Headd0er -5</h5>
+				<h6>Headd0er -6</h6>
+			</body>
+			</html>
+	</body>
 </html>
