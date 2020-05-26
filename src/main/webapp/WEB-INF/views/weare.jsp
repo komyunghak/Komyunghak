@@ -79,9 +79,9 @@ line-height:1.5;
 					<li><a href="contactus">CONTACT US</a></li>
 				</ul>
 			</nav>
-			</header>
 			<span class="menu-toggle-btn"> <span></span> <span></span> <span></span>
 			</span>
+			</header>
 		<section class="content">
 
 			<section class="display-section">
