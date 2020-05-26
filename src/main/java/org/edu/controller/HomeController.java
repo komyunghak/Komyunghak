@@ -20,6 +20,15 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	/**
+	 * WORK 페이지 파일 입니다.
+	 */
+	@RequestMapping(value = "/work", method = RequestMethod.GET)
+	public String work(Locale locale, Model model) {
+
+		return "work";
+	}
+	
+	/**
 	 * we are 페이지 파일 입니다.
 	 */
 	@RequestMapping(value = "/weare", method = RequestMethod.GET)
