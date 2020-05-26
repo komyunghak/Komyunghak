@@ -29,12 +29,39 @@ public class HomeController {
 	}
 	
 	/**
+	 * BLOG 페이지 파일 입니다.
+	 */
+	@RequestMapping(value = "/blog", method = RequestMethod.GET)
+	public String blog(Locale locale, Model model) {
+
+		return "blog";
+	}
+	
+	/**
+	 * HOME 페이지 파일 입니다.
+	 */
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String HOME(Locale locale, Model model) {
+
+		return "home";
+	}
+	
+	/**
 	 * we are 페이지 파일 입니다.
 	 */
 	@RequestMapping(value = "/weare", method = RequestMethod.GET)
 	public String weare(Locale locale, Model model) {
 
 		return "weare";
+	}
+	
+	/**
+	 * CONTACTUS 페이지 파일 입니다.
+	 */
+	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
+	public String contactus(Locale locale, Model model) {
+
+		return "contactus";
 	}
 
 	/**

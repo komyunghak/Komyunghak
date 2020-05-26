@@ -51,6 +51,35 @@ transition:all 0.2s;
 .work-section .work-list li a:hover:before{
 opacity:0.86;
 }
+.work-section .work-list li .info{
+position:absolute;
+top:0;
+left:23px;
+z-index:20;
+opacity:0;
+transition:all 0.3s;
+}
+.work-section .work-list li a:hover .info{
+transform:translateY(23px);
+opacity:1;
+}
+.work-section .work-list li .info h3{
+margin-bottom:8px;
+font-size:23px;
+color:#fff;
+font-weight:normal;
+}
+.work-section .work-list li .info span{
+font-size:11px;
+color:#fff;
+}
+.work-section .work-list li img{
+display:block;
+width:100%;
+max-width:100%;
+height:auto;
+}
+
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script src="/resources/js/common.js"></script>
@@ -106,7 +135,8 @@ opacity:0.86;
 </div>
 <img src="resources/images/hak.jpg" alt="">
 </a>
-</li><li>
+</li>
+<li>
 <a href="#">
 <div class="info">
 <h3>작업1</h3>
@@ -114,7 +144,8 @@ opacity:0.86;
 </div>
 <img src="resources/images/hak.jpg" alt="">
 </a>
-</li><li>
+</li>
+<li>
 <a href="#">
 <div class="info">
 <h3>작업1</h3>
@@ -122,7 +153,8 @@ opacity:0.86;
 </div>
 <img src="resources/images/hak.jpg" alt="">
 </a>
-</li><li>
+</li>
+<li>
 <a href="#">
 <div class="info">
 <h3>작업1</h3>
@@ -130,7 +162,8 @@ opacity:0.86;
 </div>
 <img src="resources/images/hak.jpg" alt="">
 </a>
-</li><li>
+</li>
+<li>
 <a href="#">
 <div class="info">
 <h3>작업1</h3>
@@ -138,15 +171,8 @@ opacity:0.86;
 </div>
 <img src="resources/images/hak.jpg" alt="">
 </a>
-</li><li>
-<a href="#">
-<div class="info">
-<h3>작업1</h3>
-<span>소스/작업1</span>
-</div>
-<img src="resources/images/hak.jpg" alt="">
-</a>
-</li><li>
+</li>
+<li>
 <a href="#">
 <div class="info">
 <h3>작업1</h3>
