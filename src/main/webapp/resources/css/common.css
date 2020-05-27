@@ -34,7 +34,7 @@ top:100%;
 left:0;
 width:100%;
 background:#3f51b5;
-z-index:11;
+z-index:21;
 }
 .header .gnb li {
 border-bottom:1px solid #303f9f;
@@ -72,3 +72,32 @@ margin: 21px 0;
 color: #3f51b5;
 text-align:center;
 }
+/* 태블릿용 CSS */
+@media all and (min-width:768px){
+  /* 태블릿 공통 CSS */
+  /* 태블릿 헤더 CSS */
+  .header{
+  position:static;
+  padding:28px 52px;
+  }
+  .header .gnb{
+  display:block !important;
+  position:static;
+  float:right;
+  width:auto;
+  margin-top:6px;
+  background:none;
+  }
+  .header .gnb li{
+  float:left;
+  margin-left:21px;
+  border-bottom:0;
+  }
+  .header .gnb li a{
+  padding:0;
+  font-size:16px;
+  color:#3f51b5;
+  }
+  .header .menu-toggle-btn{
+  display:none !important;
+  }
