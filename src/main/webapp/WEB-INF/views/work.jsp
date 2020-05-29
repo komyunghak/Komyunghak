@@ -79,7 +79,7 @@ width:100%;
 max-width:100%;
 height:auto;
 }
-/* 태블릿용 CSS */
+/* 태블릿용  CSS */
 @media all and (min-width:768px){
 /* 태블릿 WORK 영역 CSS */
   .work-section{
@@ -100,6 +100,16 @@ height:auto;
   }
 
 }
+
+/* PC용 WORK영역 CSS */
+@media all and (min-width:1132px){
+.work-section .sec-tit{
+  text-align:left;
+  }
+  .work-section .work-list li{
+  width:25%;
+  }
+  }
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script src="/resources/js/common.js"></script>
