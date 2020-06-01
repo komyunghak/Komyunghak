@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 공통 CSS */
 .container {
-width:90%;
+width:100%;
 max-width:1132px;
 margin:0 auto;
 }
@@ -79,7 +79,7 @@ text-align:center;
   /* 태블릿 헤더 CSS */
   .header{
   position:static;
-  padding:28px 52px;
+  padding:1px 1px;
   }
   .header .gnb{
   display:block !important;

@@ -16,6 +16,14 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/user.css">
 <style>
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/* 구글 나눔폰트 가져오기 */
+body, h1, h2, h3, h4, h5, h6, li, p {
+	font-family: "Nanum Gothic", "NanumGothic" !important;
+	font-size: 14px;
+	line-height: 24px;
+}
+
 .go_top {
 	position: fixed;
 	right: 20px;
@@ -39,8 +47,8 @@
 	<!-- 더미 데이터:CSS작업전 내용 -->
 	<div id="wrap">
 		<header class="header cfixed">
-			<h1 class="logo">
-				<a href="">LOGO</a>
+			<h1 id="logo"><img src="/resources/images/logo.png" />
+				
 			</h1>
 			<nav>
 				<ul class="gnb">

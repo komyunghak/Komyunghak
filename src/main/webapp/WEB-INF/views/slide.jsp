@@ -12,6 +12,7 @@
 .center {
 	margin: 0 auto;
 }
+
 .row {
 	/* overflow: hidden */
 	width: 100%;
@@ -19,61 +20,79 @@
 	min-width: 748px;
 	margin: 0 auto;
 }
+
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9,
 	.col-10, .col-11 {
 	float: left;
 	margin-right: 3.8%;
 	min-height: 1px;
 }
+
 .row .col-1 {
 	width: 4.85%;
 }
+
 .row .col-2 {
 	width: 13.45%;
 }
+
 .row .col-3 {
 	width: 22.05%;
 }
+
 .row .col-4 {
 	width: 30.75%;
 }
+
 .row .col-5 {
 	width: 39.45%;
 }
+
 .row .col-6 {
 	width: 48%;
 }
+
 .row .col-7 {
 	width: 56.75%;
 }
+
 .row .col-8 {
 	width: 65.4%;
 }
+
 .row .col-9 {
 	width: 74.05%;
 }
+
 .row .col-10 {
 	width: 82.7%;
 }
+
 .row .col-11 {
 	width: 91.35%;
 }
+
 .row .col-12 {
 	width: 100%;
 	float: left;
 }
+
 .last {
 	margin-right: 0;
 }
+
 [class^=col]>:first-child {
 	margin-top: 0;
 }
+
 img, object, embed, iframe {
 	max-width: 100%;
 }
+
 img, iframe {
 	height: auto;
 }
+
 .fr {
 	float: right;
 }
@@ -102,11 +121,13 @@ img, iframe {
 		padding-right: 20px;
 	}
 }
+
 .clearfix:after {
 	content: "";
 	display: block;
 	clear: both;
 }
+
 .blind {
 	visiblity: hidden;
 	position: absolute;
@@ -123,10 +144,12 @@ body, h1, h2, h3, h4, h5, h6, li, p {
 	font-size: 14px;
 	line-height: 24px;
 }
+
 body {
 	margin: 0px;
 	padding: 0px;
 }
+
 body header {
 	background: url(/resources/images/header-bg.jpg) no-repeat 50% 55%;
 	-webkit-background-size: cover;
@@ -138,17 +161,21 @@ body header {
 	height: 90px;
 	z-index: 999;
 }
+
 body>section {
 	margin-top: 90px;
 }
+
 body ul, body ol {
 	padding: 0;
 	list-style: none;
 }
+
 body header .row #gnb, body header .row {
 	position: relative;
 	margin: 0 auto;
 }
+
 body header .row #brand {
 	background: url(/resources/images/logo.png) no-repeat 0% 60%;
 	height: 90px;
@@ -156,9 +183,11 @@ body header .row #brand {
 	margin: 0px;
 	text-indent: -10000px;
 }
+
 body header .row #brand:hover {
 	background-color: rgba(0, 0, 0, 0.1)
 }
+
 body header .row #brand:hover:before {
 	top: 35px;
 	-webkit-transform: rotate(360deg);
@@ -166,33 +195,40 @@ body header .row #brand:hover:before {
 	-ms-transform: rotate(360deg);
 	transform: rotate(360deg);
 }
+
 body header .row #gnb {
 	position: absolute;
 	top: 35px;
 	right: 0;
 }
+
 body header .row #gnb ul {
 	margin: 0;
 }
+
 body header .row #gnb ul li {
 	float: left;
 	margin-right: 30px;
 }
+
 body header .row #gnb ul li:last-child {
 	margin-right: 0;
 }
+
 body header .row #gnb ul li a {
 	font-size: 16px;
 	color: #fff;
 	text-decoration: none;
 	text-shadow: 0 2px #282020;
 }
+
 body header .row #gnb ul li a:hover, body header .row #gnb ul li a:focus
 	{
 	color: #fff;
 	text-shadow: none;
 	font-weight: bold;
 }
+
 body section#contents h2, body section#contents h3 {
 	position: relative;
 	margin-bottom: 40px;
@@ -203,6 +239,7 @@ body section#contents h2, body section#contents h3 {
 	color: #21759A;
 	padding: 20px;
 }
+
 body section#contents h2:before, body section#contents h3:before {
 	content: "";
 	position: absolute;
@@ -216,51 +253,63 @@ body section#contents h2:before, body section#contents h3:before {
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
+
 body section#contents li {
 	margin-bottom: 60px;
 }
+
 body section#contents li img {
 	border: 1px solid red;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 body section#contents li h4, body section#contents li h5 {
 	font-size: 22px;
 }
+
 body section#contents li h5 {
 	margin-top: 22px;
 	margin-bottom: 32px;
 }
+
 body section#contents li p {
 	font-size: 14px;
 	line-height: 24px;
 	color: #818181;
 }
+
 body footer {
 	border-top: 1px solid #e2e2e2;
 	padding-top: 20px;
 }
+
 body footer p {
 	padding-top: 40px;
 	padding-bottom: 40px;
 	background: url(/resources/images/logo.png) no-repeat 100% 50%;
 }
+
 body footer p small {
 	display: block;
 	line-height: 1.2;
 }
+
 body footer p small a:link, body footer p small a:visited {
 	color: #606060;
 	text-decoration: none;
 }
+
 body footer p small a:hover, body footer p small a:active {
 	color: #212121;
 }
+
 ::selection {
 	background-color: #eee7dd;
 	color: #542e1c;
 }
+
 ::-moz-selection {
 	background-color: #eee7dd;
 	color: #542e1c;
@@ -272,6 +321,7 @@ body footer p small a:hover, body footer p small a:active {
 		.row .col-11, .row .col-12 {
 		text-align: center;
 	}
+	nav > ul { display: none;}
 	body header, body section#contents, body footer {
 		width: 100%;
 		padding-left: 0%;
@@ -283,6 +333,7 @@ body footer p small a:hover, body footer p small a:active {
 	body section#contents {
 		margin-top: 90px;
 	}
+	
 	body header {
 		z-index: 999;
 	}
@@ -309,44 +360,72 @@ body footer p small a:hover, body footer p small a:active {
 		width: 100%;
 	}
 	body header .row #gnb ul li {
-	float: none;
-	margin-right: 0;
-	margin-bottom: 1px;
-	border-top: 1px solid #555;
-	border-bottom: 1px solid #555;
-	padding: 10px 30px;
-	background-color: rgba(56,56,56,1);
+		float: none;
+		margin-right: 0;
+		margin-bottom: 1px;
+		border-top: 1px solid #555;
+		border-bottom: 1px solid #555;
+		padding: 10px 30px;
+		background-color: rgba(56, 56, 56, 1);
 	}
-	body header .row #gnb ul li:hover,
-	body header .row #gnb ul li:active {
-	background-color: rgba(0,0,0,1);
+	body header .row #gnb ul li:hover, body header .row #gnb ul li:active {
+		background-color: rgba(0, 0, 0, 1);
 	}
 	body header .row #gnb ul li a {
-	color: #fff;
-	text-shadow: none;
+		color: #fff;
+		text-shadow: none;
 	}
-	section#contents #main img,
-	section#contents #sub img {
-	width: 90%;
-	padding: 10px;
-	border: 1px solid #e0e0e0;
-	background: #fff;
+	section#contents #main img, section#contents #sub img {
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #e0e0e0;
+		background: #fff;
 	}
 	footer p {
-	padding-top: 0px !important;
-	padding-bottom: 15px !important;
-	width: 90% !important;
-	margin: 0 auto !important;
-	background: none !important;
+		padding-top: 0px !important;
+		padding-bottom: 15px !important;
+		width: 90% !important;
+		margin: 0 auto !important;
+		background: none !important;
 	}
 }
-.nivo-caption { text-align: center !important; }
+
+.nivo-caption {text-align: center !important;}
+.nivoSlider  {height: 400px !important;} 
+.nivoSlider img {height: 400px;} 
+
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function($) { //j쿼리 시작 : $(document).ready(function(){ }); == $(function(){ }); 과 동일
+	//모바일메뉴 로딩시
+	var pull=$('#pull');
+	var menu=$('nav > ul');
+	$(pull).on('click', function(e){
+         var w=$(window).width();
+         if(w<960 )	{
+           if(menu.is(':visible')){
+               menu.slideToggle("fast");
+               return;   	      		
+           }
+           if(menu.is(':hidden')){
+               menu.slideToggle("fast");
+               return;
+           }
+         }
+   });//클릭이벤트 끝
+ });
+	//모바일 토글에 대한 스타일 -> PC에서는 없앤다.
+	 $(window).resize(function(){
+              var w=$(window).width();
+              var menu=$('nav > ul');
+              if(w>960 )	{
+                menu.removeAttr('style');
+              }else{
 
-	});
+              }
+              return;
+          });
 </script>
 </head>
 <body>
@@ -372,16 +451,39 @@ body footer p small a:hover, body footer p small a:active {
 		</div>
 	</header>
 	<!-- e:header-->
-	<section class="banner_slider">
+	<script src="/resources/js/jquery.nivo.slider.js"></script>
+    <link href="/resources/css/nivo-slider.css" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    jQuery(function($){ //j쿼리 시작 : $(document).ready(function(){ }); == $(function(){ }); 과 동일
+        //$('#slider').nivoSlider();
+        $('#slider').nivoSlider({
+                effect: 'slideInLeft',
+                directionNav: true,
+                controlNav: false,
+                pauseOnHover: false,
+                prevText: '<span style="font-size:30px;color:#fff;padding-left:10px;"><</span>',
+    			  nextText: '<span style="font-size:30px;color:#fff;padding-right:10px;">></span>',
+          });
+        $('.nivo-prevNav').on('mouseover', function(){
+             $('#slider img').attr("data-transition","slideInRight");
+        });
+        $('.nivo-nextNav').on('mouseover', function(){
+             $('#slider img').attr("data-transition","slideInLeft");
+        });
+  });
+    </script>
+    <section class="banner_slider">
 		<div id="slider" class="nivoSlider">
-			<img src="/resources/images/hak.jpg" title="슬라이드1" />
+			<img src="/resources/images/slide1.jpg" title="슬라이드1" />
+			<img src="/resources/images/slide2.jpg" title="슬라이드2" />
+			<img src="/resources/images/slide3.jpg" title="슬라이드3" />
+			<img src="/resources/images/slide4.jpg" title="슬라이드4" />
+		
 		</div>
 	</section>
 	<section id="contents" class="row">
 		<article id="main">
-			<h2>타임스페이스는 사용자 중심의 웹페이지를 제작하는 회사 입니다. 그리고, 부가 사업으로 노트북/LCD모니터
-				리페어(재생) 부분을 운영하고 있습니다.</h2>
-			<ul>
+						<ul>
 				<li class="clearfix"><img class="col-4"
 					src="/resources/images/hak.jpg" alt="" width="296" height="206" />
 					<div class="col-8 last">
