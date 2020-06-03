@@ -393,7 +393,20 @@ body footer p small a:hover, body footer p small a:active {
 .nivo-caption {text-align: center !important;}
 .nivoSlider  {height: 400px !important;} 
 .nivoSlider img {height: 400px;} 
+.row {
+margin-right: auto !important;
+ margin-left: auto !important;
+  }
+.carousel-inner .item img { 
+	height: 600px !important;
+	width: 100% !important;  
+}
+  .carousel-control {
+  top: 50% !important;
+  }
 
+ 
+ 
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -425,9 +438,14 @@ body footer p small a:hover, body footer p small a:active {
 
               }
               return;
-          });
+          }); 
 </script>
 </head>
+
+
+
+
+
 <body>
 	<header>
 		<div class="row">
@@ -451,6 +469,7 @@ body footer p small a:hover, body footer p small a:active {
 		</div>
 	</header>
 	<!-- e:header-->
+	<!--  니보 슬라이더 작동(아래)
 	<script src="/resources/js/jquery.nivo.slider.js"></script>
     <link href="/resources/css/nivo-slider.css" media="screen" rel="stylesheet" type="text/css">
     <script type="text/javascript">
@@ -472,14 +491,66 @@ body footer p small a:hover, body footer p small a:active {
         });
   });
     </script>
+     -->
+     <!-- 부트스트랩 -->
+    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+  //jQuery(function($){
+	  $(document).ready(function($) {
+    	$('.carousel').carousel({
+    	  interval: 2000,
+    	  pause: false
+    })
+	  });
+    </script>
     <section class="banner_slider">
+    
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/resources/images/slide1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="item">
+      <img src="/resources/images/slide2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="item">
+      <img src="/resources/images/slide3.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="item">
+      <img src="/resources/images/slide4.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="left carousel-control" href="#carouselExampleIndicators" data-slide="prev" onclick="$('#myCarousel').carousel('prev')">
+	  <span class=arrow">&lt</span>
+	  </a>
+	  <a class="right carousel-control" href="#carouselExampleIndicators" data-slide="next" onclick="$('#myCarousel').carousel('next')">
+	  <span style="font-size:30px;font-weight:bold">&gt;</span>
+	  </a>
+   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Nexts</span>
+	  </a>
+  </div>
+	
+    <!-- 니보 슬라이더용 비지니스 폼 
 		<div id="slider" class="nivoSlider">
 			<img src="/resources/images/slide1.jpg" title="슬라이드1" />
 			<img src="/resources/images/slide2.jpg" title="슬라이드2" />
 			<img src="/resources/images/slide3.jpg" title="슬라이드3" />
 			<img src="/resources/images/slide4.jpg" title="슬라이드4" />
 		
-		</div>
+		-->
+		
 	</section>
 	<section id="contents" class="row">
 		<article id="main">
