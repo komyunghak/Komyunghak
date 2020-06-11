@@ -18,7 +18,7 @@ public class MainController {
 	
 
 	private static String TIME_SERVER = "pool.ntp.org";
-
+													//입출력에대한에러
 	public static void main(String[] args) throws IOException {
 		System.out.println("클래스형 변수(사용자정의 자료형)");
 		//MemberVO 클래스를 실행하기 위해 new 연산자 사용
@@ -58,6 +58,8 @@ public class MainController {
 		} catch (SocketException e) {
 			System.out.println("open메서드 실행 오류");
 			e.printStackTrace();
+		}finally {  //말그대로 finally는 오류가 나도 실행이된다
+			System.out.println("이부분은 성공/오류에 상관없이 항상 실행됩니다.");
 		}
 		InetAddress address = InetAddress.getByName(TIME_SERVER);//add throw 에러가 나도 상관을 안쓰겠다.  try catch는 에러가 나오면 문제를 잡고가겠다 라는 의미
 	    TimeInfo timeInfo = timeClient.getTime(address);
