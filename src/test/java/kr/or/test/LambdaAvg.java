@@ -24,28 +24,32 @@ class Student {
 	public void setMathScore(int mathScore) {
 		this.mathScore = mathScore;
 	}
-	public Student(String string, int eng, int math) {
+	public Student(String name, int eng, int math) {
+		this.name = name;
+		this.englishScore = eng;
+		this.mathScore = math;
 	}
 }
+
 public class LambdaAvg {
 	private static Student[] students = {
-			new Student("홍길동",90,96),
-			new Student("신용권",95,93)
+			new Student("홍길동", 90, 96),
+			new Student("신용권", 95, 93)
 	};
-	public static double avg(ToIntFunction<Student>function) {
+	public static double avg(ToIntFunction<Student> function) {
 		int sum = 0;
-		for(Student student : students) {
-			sum = sum +function.applyAsInt(student);
+		for(Student student:students) {
+			System.out.println("더하는 점수:" + function.applyAsInt(student));
+			sum = sum + function.applyAsInt(student);
 		}
-	double avg = (double)sum/students.length;
-			return avg;
+		double avg = (double) sum / students.length;
+		return avg;
 	}
 	public static void main(String[] args) {
-	double englishAvg = avg(s-> s.getEnglishScore());
-	System.out.println("영어 평균 점수:"+EnglishAvg);
-
-	double mathAvg = avg (s -> s.getMathScore());
-	System.out.println("수학 평균 점수:" +mathAVG);
+		double englishAvg = avg(s->s.getEnglishScore());
+		System.out.println("영어평균점수: " + englishAvg);
+		double mathAvg = avg(s->s.getMathScore());
+		System.out.println("수학평균점수: " + mathAvg);
 	}
-}
 
+}

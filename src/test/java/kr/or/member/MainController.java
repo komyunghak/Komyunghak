@@ -24,18 +24,18 @@ public class MainController {
 		//MemberVO 클래스를 실행하기 위해 new 연산자 사용
 		MemberVO m1 = new MemberVO();
 		//setter 메서드를 이용해 해당 인스턴스(클래스) 변수(필드)에 값을 넣는다.
-		m1.setName("홍길동");
-		m1.setAge(45);
-		m1.setPhoneNum("000-0000-0000");
+		m1.setName("고명학");
+		m1.setAge(25);
+		m1.setPhoneNum("010-4665-7836");
 		//마찬가지로 다른 MeberVO객체(instance)를 생성해서 값을 얻는다.
 		MemberVO m2 = new MemberVO();
-		m2.setName("성춘향");
-		m2.setAge(100);
-		m2.setPhoneNum("111-1111-1111");
+		m2.setName("고명학");
+		m2.setAge(25);
+		m2.setPhoneNum("010-4665-7836");
 		MemberVO m3 = new MemberVO();
-		m3.setName("각시탈");
-		m3.setAge(3);
-		m3.setPhoneNum("222-2222-2222");
+		m3.setName("고명학");
+		m3.setAge(25);
+		m3.setPhoneNum("010-4665-7836");
 		//크기가 3인 MemberVO클래스를 배열객체로 선언
 		MemberVO[] members = new MemberVO[3];
 		//MemberVO[]배열클래스 참조index에 m1,m2,m3,를 넣는다
@@ -72,7 +72,7 @@ public class MainController {
 	            .toLocalDateTime();//date to LocalDateTime
 	    
 	    System.out.println("Server 시간: " + localDateTime);//서버 시간!
-	    System.out.println("로컬 PC 시간: " + LocalDateTime.now());
+	    System.out.println("로컬 PC 시간: " + LocalDateTime.now());//피시 시간!
 		}
 	
 	}
