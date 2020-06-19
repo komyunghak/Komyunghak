@@ -24,6 +24,11 @@ class MemberVO { //VO(ValueObect)클래스형 자료  또 다른것은 BoradVO
 	public void setName(String name) {
 		this.name = name;
 	}
+	@Override
+	public String toString() {
+		return "MemberVO [name=" + name + ", age=" + age + ", phoneNum=" + phoneNum + "]";
+	}
+	
 }
 class MemberService {
 	//액션-서비스 클래스 - 출력용 메서드 작성

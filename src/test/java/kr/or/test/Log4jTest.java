@@ -1,5 +1,8 @@
 package kr.or.test;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import org.apache.log4j.Logger;
 //* logger 레벨 : debug < info < warn < error < fatal    위험순위 
 public class Log4jTest {
@@ -8,7 +11,14 @@ public class Log4jTest {
 			MemberVO memberVO = new MemberVO();
 			memberVO.setName("홍길동");
 			memberVO.setAge(24);
-			
+			try {
+				InetAddress localPc = InetAddress.getLocalHost();
+				String ip = localPc.getHostAddress();
+				log.info("test라는 메서드를 사용한 PC아이피는 :" + ip);
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			}
+
 			log.debug("디버그!!" + memberVO);
 			log.info("인포!!");
 			log.warn("워닝!!");
