@@ -34,7 +34,6 @@ public static void serviceApi() {//버퍼리더 버퍼란 외부에서 계속 �
 	} catch (MalformedURLException e) {
 			e.printStackTrace();
 	} catch (IOException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	//콘솔화면에 현재PC시간을 표시
