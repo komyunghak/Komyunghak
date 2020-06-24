@@ -1,6 +1,6 @@
-2020-06-22 10:46:33,645  INFO [kr.or.test.Log4jTest] test라는 메서드를 사용한 PC아이피는 :192.168.56.1
-2020-06-22 10:46:33,645 DEBUG [kr.or.test.Log4jTest] 디버그!!MemberVO [name=홍길동, age=24, phoneNum=null]
-2020-06-22 10:46:33,645  INFO [kr.or.test.Log4jTest] 인포!!
-2020-06-22 10:46:33,645  WARN [kr.or.test.Log4jTest] 워닝!!
-2020-06-22 10:46:33,645 ERROR [kr.or.test.Log4jTest] 에러!!
-2020-06-22 10:46:33,645 FATAL [kr.or.test.Log4jTest] 파탈에러!!
+2020-06-24 17:28:59,885  INFO [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2020-06-24 17:28:59,950  INFO [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory] Starting embedded database: url='jdbc:hsqldb:mem:dataSource', username='sa'
+2020-06-24 17:29:00,179  INFO [org.springframework.jdbc.datasource.init.ScriptUtils] Executing SQL script from class path resource [db/edu_hsql.sql]
+2020-06-24 17:29:00,190  INFO [org.springframework.jdbc.datasource.init.ScriptUtils] Executed SQL script from class path resource [db/edu_hsql.sql] in 11 ms.
+2020-06-24 17:29:00,439  INFO [org.springframework.web.context.support.GenericWebApplicationContext] Closing org.springframework.web.context.support.GenericWebApplicationContext@3d99d22e: startup date [Wed Jun 24 17:28:59 KST 2020]; root of context hierarchy
+2020-06-24 17:29:00,441  INFO [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory] Shutting down embedded database: url='jdbc:hsqldb:mem:dataSource'

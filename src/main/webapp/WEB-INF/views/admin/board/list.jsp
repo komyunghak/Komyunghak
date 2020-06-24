@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../include/header.jsp"  %>
-
+<%@ include file="../include/header.jsp" %>
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -32,7 +31,7 @@
                         </select>
                         </div>
                         <div class="search" style="display:inline">
-     <input type="text" placeholder="">
+     <input type="text"  name= "search_keyword" placeholder="">
 <div class="button" style="display:inline">
      <button>검색</button>
 </div>
@@ -117,7 +116,6 @@
  
     
     </div>
-    <!-- /Content Wrapper. Contains page content -->
+    <!-- /.content-header -->
 
-
-<%@ include file="../include/footer.jsp"  %>
+<%@include file="../include/footer.jsp" %>

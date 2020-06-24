@@ -17,7 +17,7 @@ public static void serviceApi() {//버퍼리더 버퍼란 외부에서 계속 �
 	BufferedReader br = null;    //HRD넷에서 전송받은 데이터를 일시저장하는 저수지와 같은 역할
 	String urlstr = "http://www.hrd.go.kr/jsp/HRDP/HRDPO00/HRDPOA60/HRDPOA60_1.jsp?returnType=XML&"
 			+ "authKey=gVt1YLZk4NmjAYhyfXxLeYSEjk7TGWFu&pageNum=1&pageSize=10&"
-			+ "srchTraStDt=20200622&srchTraEndDt=20200922&outType=1&sort=ASC&sortCol=TR_STT_DT";         
+			+ "srchTraStDt=20200622&srchTraEndDt=20200922&outType=1&sort=ASC&sortCol=TR_STT_DT";  //원래는 1줄이지만 깨끗하게 보이려고 3줄로 만듬       
 	try {
 		URL url = new URL(urlstr);  //스프링일 경우는 throw catch를 사용하겠지만 클래스 사용일 경우는 try catch사용을 권장한다.
 		HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();

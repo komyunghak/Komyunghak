@@ -1,12 +1,4 @@
-2020-06-22 10:46:17,187  INFO [kr.or.test.Log4jTest] 인포!!
-2020-06-22 10:46:17,203  WARN [kr.or.test.Log4jTest] 워닝!!
-2020-06-22 10:46:17,203 ERROR [kr.or.test.Log4jTest] 에러!!
-2020-06-22 10:46:17,203 FATAL [kr.or.test.Log4jTest] 파탈에러!!
-2020-06-22 10:46:23,318  WARN [org.apache.log4j.joran.action.PriorityAction] Priority element has been deprecated, please use <level> instead.
-2020-06-22 10:46:23,334  INFO [kr.or.test.Log4jTest] test라는 메서드를 사용한 PC아이피는 :192.168.56.1
-2020-06-22 10:46:23,334 DEBUG [kr.or.test.Log4jTest] 디버그!!MemberVO [name=홍길동, age=24, phoneNum=null]
-2020-06-22 10:46:23,334  INFO [kr.or.test.Log4jTest] 인포!!
-2020-06-22 10:46:23,334  WARN [kr.or.test.Log4jTest] 워닝!!
-2020-06-22 10:46:23,334 ERROR [kr.or.test.Log4jTest] 에러!!
-2020-06-22 10:46:23,334 FATAL [kr.or.test.Log4jTest] 파탈에러!!
-2020-06-22 10:46:33,630  WARN [org.apache.log4j.joran.action.PriorityAction] Priority element has been deprecated, please use <level> instead.
+2020-06-24 17:28:59,742  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/sample/htmltest],methods=[GET]}" onto public java.lang.String org.edu.controller.HomeController.htmltest(java.util.Locale,org.springframework.ui.Model)
+2020-06-24 17:28:59,743  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/sample/],methods=[GET]}" onto public java.lang.String org.edu.controller.HomeController.sample(java.util.Locale,org.springframework.ui.Model)
+2020-06-24 17:28:59,801  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3d99d22e: startup date [Wed Jun 24 17:28:59 KST 2020]; root of context hierarchy
+2020-06-24 17:28:59,829  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3d99d22e: startup date [Wed Jun 24 17:28:59 KST 2020]; root of context hierarchy

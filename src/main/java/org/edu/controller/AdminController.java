@@ -16,7 +16,7 @@ public class AdminController {
 	public String boardList(Locale locale, Model model) { //Locale 이란?  현재는 우리가 한국어를 쓰고 있지만 다국어를쓸때 확인시켜주는명령어
 		                                //Model이란? 데이터베이스와연동해서 쓸때 사용되는명령어     결국 지금은 이 명령어 2개를 다 사용하지는않고있다.
 		
-		return "admin/member/list";
+		return "admin/board/list";
 	}
 	
 	/**
