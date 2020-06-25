@@ -1,13 +1,11 @@
 package org.edu.dao;
 
 import java.util.List;
-
 import javax.inject.Inject;
-
 import org.apache.ibatis.session.SqlSession;
-
 import org.edu.vo.MemberVO;
 import org.springframework.stereotype.Repository;
+
 
 @Repository
 

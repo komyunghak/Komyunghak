@@ -1,4 +1,6 @@
-2020-06-24 17:28:59,742  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/sample/htmltest],methods=[GET]}" onto public java.lang.String org.edu.controller.HomeController.htmltest(java.util.Locale,org.springframework.ui.Model)
-2020-06-24 17:28:59,743  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/sample/],methods=[GET]}" onto public java.lang.String org.edu.controller.HomeController.sample(java.util.Locale,org.springframework.ui.Model)
-2020-06-24 17:28:59,801  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3d99d22e: startup date [Wed Jun 24 17:28:59 KST 2020]; root of context hierarchy
-2020-06-24 17:28:59,829  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3d99d22e: startup date [Wed Jun 24 17:28:59 KST 2020]; root of context hierarchy
+2020-06-25 16:12:20,352  INFO [org.springframework.web.context.support.GenericWebApplicationContext] Closing org.springframework.web.context.support.GenericWebApplicationContext@57855c9a: startup date [Thu Jun 25 16:12:18 KST 2020]; root of context hierarchy
+2020-06-25 16:12:20,352 DEBUG [org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
+2020-06-25 16:12:20,352 DEBUG [org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15e4e66a] was not registered for synchronization because synchronization is not active
+2020-06-25 16:12:20,352 DEBUG [org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15e4e66a]
+2020-06-25 16:12:20,352 DEBUG [org.springframework.jdbc.datasource.DataSourceUtils] Fetching JDBC Connection from DataSource
+2020-06-25 16:12:20,352 DEBUG [org.springframework.jdbc.datasource.SimpleDriverDataSource] Creating new JDBC Driver Connection to [jdbc:hsqldb:mem:dataSource]

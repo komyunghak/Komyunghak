@@ -18,13 +18,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertMember">
 		insert into tbl_member (user_id,user_pw,user_name,email,point,enabled,levels,reg_date) <!-- 업데이트는 현재에 필요한내용이라 빼고 업데이트가 들어갈경우는 레그데이트가 빠진다 -->
-		values (#{user_id},#{user_pw},#{user_name},#{email},#{point},#{enabled},#{levels},now(reg_date)) 
+		values (#{user_id},#{user_pw},#{user_name},#{email},#{point},#{enabled},#{levels},now()) 
 	</insert>
 	<select id="selectMember" resultType="org.edu.vo.MemberVO">
 		select * from tbl_member order by reg_date DESC; 
 	</select>
 	<update id="updateMember">
-		update member set
+		update tbl_member set
 		user_pw = #{user_pw},
 		user_name = #{user_name},
 		email = #{email},

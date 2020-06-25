@@ -1,6 +1,5 @@
 package org.edu.test;
 
-
 import java.sql.Connection;
 import java.util.List;
 
@@ -19,27 +18,46 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @ContextConfiguration(locations ={"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
 @WebAppConfiguration
 public class DataSourceTest {
-   
+
    @Inject
    private DataSource ds;
    
    @Inject
    private IF_MemberService memberService;
    
+   
    @Test
    public void testConnection()throws Exception{
       Connection con = ds.getConnection();
-      System.out.println("데이터베이스 커넥션 성공:" + con);   
-      }
-
+      System.out.println("데이터베이스 커넥션 성공 : " + con);
+   }
+   
    @Test
-   public void testSelcetMember() throws Exception {
-	   System.out.println("회원리스트 입니다.");
-	   List<MemberVO> list = memberService.selectMember();
-	   for(MemberVO vo:list){
-		  System.out.println("사용자아이디 : " + vo.getUser_id());
-		  System.out.println("사용자이메일 : " + vo.getEmail());
-	   }
-	   /*System.out.println(memberService.selectMember());*/
+   public void testDeleteMember() throws Exception {
+      memberService.deleteMember("user02");
+   }
+   @Test
+   public void testUpdateMember() throws Exception {
+      MemberVO memberVO = new MemberVO();
+      memberVO.setUser_id("user02");
+      memberVO.setUser_pw("1234");
+      memberVO.setUser_name("고명학");
+      memberVO.setEmail("audgkr7836@naver.com");
+      memberVO.setPoint(100);
+      memberVO.setEnabled(true);
+      memberVO.setLevels("ROLE_ADMIN");
+      memberService.updateMember(memberVO);
+   	  }
+   
+   
+   @Test
+   public void testSelectMember() throws Exception {
+      System.out.println("회원리스트 입니다.");
+      memberService.selectMember();
+     /* List<MemberVO> list = memberService.selectMember();
+      for(MemberVO vo:list) {
+         System.out.println("사용자아이디 : " + vo.getUser_id());
+         System.out.println("사용자이메일 : " + vo.getEmail());
+      }*/
    }
 }
