@@ -9,8 +9,7 @@ import org.edu.vo.MemberVO;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MemberServiceimpl implements IF_MemberService{
-
+public class MemberServiceImpl implements IF_MemberService{
 	@Inject
 	private IF_MemberDAO memberDAO;
 	
@@ -34,7 +33,4 @@ public class MemberServiceimpl implements IF_MemberService{
 		memberDAO.deleteMember(user_id);
 		
 	}
-	
-	
-	
 }

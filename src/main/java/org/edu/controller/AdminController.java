@@ -1,7 +1,14 @@
 package org.edu.controller;
 
+import java.util.List;
 import java.util.Locale;
 
+import javax.inject.Inject;
+
+import org.edu.service.IF_BoardService;
+import org.edu.service.IF_MemberService;
+import org.edu.vo.BoardVO;
+import org.edu.vo.MemberVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,32 +16,49 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AdminController {
-	/**
-	 * 게시물관리 리스트 입니다.
-	 */
-	@RequestMapping(value = "/admin/board/list", method = RequestMethod.GET)
-	public String boardList(Locale locale, Model model) { //Locale 이란?  현재는 우리가 한국어를 쓰고 있지만 다국어를쓸때 확인시켜주는명령어
-		                                //Model이란? 데이터베이스와연동해서 쓸때 사용되는명령어     결국 지금은 이 명령어 2개를 다 사용하지는않고있다.
-		
-		return "admin/board/list";
-	}
+   
+   @Inject
+   private IF_BoardService boardService;
 	
-	/**
-	 * 회원관리 리스트 입니다.
-	 */
-	@RequestMapping(value = "/admin/member/list", method = RequestMethod.GET)
-	public String memberList(Locale locale, Model model) { //Locale 이란?  현재는 우리가 한국어를 쓰고 있지만 다국어를쓸때 확인시켜주는명령어
-		                                //Model이란? 데이터베이스와연동해서 쓸때 사용되는명령어     결국 지금은 이 명령어 2개를 다 사용하지는않고있다.
-		
-		return "admin/member/list";
-	}
-	/**
-	 * 관리자 홈 입니다.
-	 */
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) { //Locale 이란?  현재는 우리가 한국어를 쓰고 있지만 다국어를쓸때 확인시켜주는명령어
-		                                //Model이란? 데이터베이스와연동해서 쓸때 사용되는명령어     결국 지금은 이 명령어 2개를 다 사용하지는않고있다.
-		
-		return "admin/home";
-	}
+   @Inject
+   private IF_MemberService memberService;
+   
+  /**
+    * 게시물 관리 리스트 입니다.
+ * @throws Exception 
+    */
+   @RequestMapping(value = "/admin/board/list", method = RequestMethod.GET)
+   public String boardList(Locale locale, Model model) throws Exception {
+	   List<BoardVO> list = boardService.selectBoard();
+	      model.addAttribute("boardList", list); //모델클래스로 jsp화면으로 boardService에서 셀렉트한 list값을 memberList변수명으로 보낸다.
+      return "admin/board/board_list";
+   }
+   /**
+    * 회원관리 리스트 입니다.
+    * @throws Exception 
+    */
+   @RequestMapping(value = "/admin/member/list", method = RequestMethod.GET)
+   public String memberList(Locale locale, Model model) throws Exception {
+      List<MemberVO> list = memberService.selectMember();
+      model.addAttribute("memberList", list); //모델클래스로 jsp화면으로 memberService에서 셀렉트한 list값을 memberList변수명으로 보낸다.
+      return "admin/member/member_list";			  // list->boardList ->jsp
+   }
+   /**
+    * 회원관리 상세보기 입니다.
+    * @throws Exception 
+    */
+   @RequestMapping(value = "/admin/member/view", method = RequestMethod.GET) //이쪽은 url로 짧으면 짧을수록 좋다.
+   public String memberView(Locale locale, Model model) throws Exception {
+            
+      return "admin/member/member_view";			  
+   }
+   /**
+    * 관리자 홈 입니다.
+    */
+   @RequestMapping(value = "/admin", method = RequestMethod.GET)
+   public String home(Locale locale, Model model) {
+      
+      return "admin/home";
+   }
+
 }
