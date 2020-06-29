@@ -79,7 +79,7 @@
                     <c:forEach items="${memberList}" var="memberVO" varStatus="status">
                     <tr>
                       <td>${memberVO.user_id}</td>
-                      <td><a href=/admin/member/view?user_id=${memberVO.user_id}">${memberVO.user_name}</a></td>
+                      <td><a href="/admin/member/view?user_id=${memberVO.user_id}">${memberVO.user_name}</a></td>
                       <td>${memberVO.email}</td>
                       <td><span class="tag tag-success">${memberVO.enabled}</span></td>
                       <td>${memberVO.reg_date}</td>
@@ -87,7 +87,7 @@
                     </tr>                    
                     </c:forEach>
                   </tbody>
-            <td> <button type="submit" class="btn btn-primary">CREATE</button>
+            <td> <a href="/admin/member/write" class="btn btn-primary">CREATE</a>
                </td>
            <td>
               <nav aria-label="Contacts Page Navigation">

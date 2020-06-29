@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="../include/header.jsp" %>
+<%@ include file="../include/header.jsp"  %>
+
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -32,9 +33,9 @@
                         </select>
                         </div>
                         <div class="search" style="display:inline">
-     <input type="text"  name= "search_keyword" placeholder="">
+     <input type="text" name="search_keyword" placeholder="">
 <div class="button" style="display:inline">
-     <button>검색</button>
+     <button name="btn_search">검색</button>
 </div>
 <div class="button" style="display:inline">
      <button>새글쓰기</button>
@@ -71,17 +72,16 @@
                   </thead>
                   <tbody>
                   <c:forEach items="${boardList}" var="boardVO" varStatus="status">
-                    <tr>
+                  <tr>
                       <td>${boardVO.bno}</td>
-                      <td>${boardVO.title}</td>
-                      <td>${boardVO.writer}</td>
+                      <td><a href="/admin/board/view?bno=${boardVO.bno}">${boardVO.title}</a></td>
+                      <td>${board.writer}</td>
                       <td><span class="tag tag-success">${boardVO.regdate}</span></td>
                       <td><span class="badge badge-danger right">${boardVO.view_count}</span></td>
                     </tr>
-                   </c:forEach>
+                  </c:forEach>  
                   </tbody>
-            	<td> 
-            <button type="submit" class="btn btn-primary">CREATE</button>
+            <td> <button type="submit" class="btn btn-primary">CREATE</button>
                </td>
            <td>
               <nav aria-label="Contacts Page Navigation">
@@ -99,6 +99,7 @@
  
     
     </div>
-    <!-- /.content-header -->
+    <!-- /Content Wrapper. Contains page content -->
 
-<%@include file="../include/footer.jsp" %>
+
+<%@ include file="../include/footer.jsp"  %>

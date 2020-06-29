@@ -18,9 +18,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <insert id="insertBoard"> <!-- 입력쿼리 -->
    <!-- updatedate는 수정한 날짜가 들어갑니다 나중에 regdate가 빠지고 updatedate가 들어갑니다.-->
    <!--  쿼리의 순서는 똑같이 넣어줘어야 합니다. -->
-      insert into tbl_board (bno, title, content, writer, regdate, view_count, reply_count)
+      insert into tbl_board (title, content, writer, regdate, view_count, reply_count)
       <!-- 형식이라요 -->
-      values (#{bno}, #{title}, #{content}, #{writer}, now() ,#{view_count}, #{reply_count})
+      values #{title}, #{content}, #{writer}, now() ,#{view_count}, #{reply_count})
    </insert>
    <!-- crud 쿼리 작성 -->
    <!-- 조회 -->
@@ -42,5 +42,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <delete id="deleteBoard">
       delete from tbl_board where bno = #{bno}
    </delete>
-
+<select id="viewBoard" resultType="org.edu.vo.BoardVO">
+      select * from tbl_board where bno = #{bno}
+   </select>
 </mapper>

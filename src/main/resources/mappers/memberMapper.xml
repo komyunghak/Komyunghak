@@ -38,5 +38,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteMember">
 		delete from tbl_member where user_id = #{user_id} <!-- user_id는 프라이머키라 비밀번호같은 키라 중요 -->
 	</delete>
-
+	
+<select id="viewMember" resultType="org.edu.vo.MemberVO">
+	select * from tbl_member where user_id=#{user_id};
+	</select>
 </mapper>
