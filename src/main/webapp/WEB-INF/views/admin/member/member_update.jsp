@@ -2,12 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../include/header.jsp"  %>
-<<script>
-if('${msg}' == "success"){
-	alert("수정에 성공하였습니다.!");
-}
-</script>
-<!-- Content Wrapper. Contains page content -->
+ 
+       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
          <!-- Content Header (Page header) -->
          <div class="content-header">
@@ -32,60 +28,76 @@ if('${msg}' == "success"){
                <!-- general form elements disabled -->
                <div class="card card-warning">
                   <div class="card-header">
-                     <h3 class="card-title">READ Member</h3>
+                     <h3 class="card-title">회원수정</h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
-                     <form role="form">
+                     <form role="form" action="/admin/member/update" method="post">
                         <div class="row">
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
-                                 <label>user_id</label> <br> ${memberVO.user_id}
-                                    
+                                 <label>user_id</label> 
+                                 <br>${memberVO.user_id}
+                                 <input value="${memberVO.user_id}" name="user_id" type="hidden" class="form-control"
+                                    placeholder="Enter user_id">
                               </div>
                            </div>
 
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
-                                 <label>user_pw</label> <br> ${memberVO.user_pw}
+                                 <label>user_pw</label> 
+                                 <input value="${memberVO.user_pw}" name="user_pw" type="text" class="form-control"
+                                    placeholder="Enter user_pw">
                               </div>
                            </div>
 
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
-                                 <label>user_name</label> <br> ${memberVO.user_name}
+                                 <label>user_name</label> 
+                                 <input value="${memberVO.user_name}" name="user_name" type="text" class="form-control"
+                                    placeholder="Enter user_name">
                               </div>
                            </div>
 
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
-                                 <label>email</label> <br> ${memberVO.email}
+                                 <label>email</label> 
+                                 <input value="${memberVO.email}" name="email" type="text" class="form-control"
+                                    placeholder="Enter email">
                               </div>
                            </div>
                               <div class="col-sm-12">
                               <div class="form-group">
-                                 <label>point</label> <br> ${memberVO.point}
+                                 <label>point</label> 
+                                 <input value="${memberVO.point}" name="point" type="text" class="form-control"
+                                    placeholder="0">
                               </div>
                            </div>
                            <div class="form-group">
                         <label>enabled</label>
                         <select class="form-control">
-                          <option>false</option>
-                          <option>true</option>
+                          <option value="0" <c:out value="${(memberVO.enabled eq 'false')?('selected'):''}" />
+                          >
+                          false</option>
+                          <option value="1" <c:out value="${(memberVO.enabled eq 'true')?('selected'):''}" />
+                          >
+                          true</option>
                         </select>
-                        <label>levels</label>
-                        <select class="form-control">
-                          <option>ROLE_USER</option>
+                        <label>level</label>
+                        <select name="levels" class="form-control">
+                          <option value="ROLE_USER"
+                          <c:out value="${memberVO.levels eq 'ROLE_USER'?'selected':''}" />>ROLE_USER</option>
+                          <option value="ROLE_ADMIN"
+                          <c:out value="${memberVO.levels eq 'ROLE_ADMIN'?'selected':''}" />>ROLE_ADMIN</option>
                         </select>
                      <br>
                      <div class = "buttons">
-                           <a href="/admin/member/update?user_id=${memberVO.user_id}" class="btn btn-warning">UPDATE</a>
-                           <button type="submit" class="btn btn-danger">delete</button>
-                           <a href="/admin/member/list" class="btn btn-primary">LIST</a>
+                           <button type="submit" class="btn btn-warning">Submit</button>
+                           <a href="/admin/member/list" class="btn btn-primary">LIST ALL</a>
                         </div>
                         </div>
                         </div>
@@ -97,9 +109,9 @@ if('${msg}' == "success"){
                   <div class="content"></div>
                   <!-- .content  -->
                </div>
-               
             </div>
          </div>
       </div>
-    
+      <!--Content Wrapper-->
+         
 <%@ include file="../include/footer.jsp"  %>

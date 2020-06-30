@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <!--  쿼리의 순서는 똑같이 넣어줘어야 합니다. -->
       insert into tbl_board (title, content, writer, regdate, view_count, reply_count)
       <!-- 형식이라요 -->
-      values #{title}, #{content}, #{writer}, now() ,#{view_count}, #{reply_count})
+      values (#{title}, #{content}, #{writer}, now() ,#{view_count}, #{reply_count})
    </insert>
    <!-- crud 쿼리 작성 -->
    <!-- 조회 -->

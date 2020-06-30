@@ -40,12 +40,13 @@
                                  <label>Title</label> <br> ${boardVO.title}
                               </div>
                            </div>
-
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
                                  <label>Content</label>
-                                 <<br> ${boardVO.title}
+                                 <br>
+                                 <textarea name="content" class="form-control" rows="3"
+                                    placeholder="Enter Writer"> ${boardVO.content}</textarea>
                               </div>
                            </div>
 
@@ -56,7 +57,7 @@
                               </div>
                            </div>
                            <div class="buttons">
-                              <button type="submit" class="btn btn-warning">UPDATE</button>
+                              <a href="/admin/board/update?bno=${boardVO.bno}" class="btn btn-warning">UPDATE</a>
                               <button type="submit" class="btn btn-danger">DELETE</button>
                               <a href="/admin/board/list" class="btn btn-primary">ListALL</a>
                            </div>
@@ -138,16 +139,6 @@
                      <div class="content"></div>
                      <!-- .content  -->
                   </div>
-                  <!-- Control Sidebar -->
-                  <aside class="control-sidebar control-sidebar-dark">
-                     <!-- Control sidebar content goes here -->
-                     <div class="p-3">
-                        <h5>Title</h5>
-                        <p>Sidebar content</p>
-                        <button type="button" class="btn btn-primary btn-lg btn-block">로그아웃</button>
-                     </div>
-                  </aside>
-                  <!-- /.control-sidebar -->
                </div>
             </div>
          </div>

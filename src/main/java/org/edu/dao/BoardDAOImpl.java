@@ -18,7 +18,7 @@ public class BoardDAOImpl implements IF_BoardDAO {
 
 	@Override
 	public void insertBoard(BoardVO boardVO) throws Exception {
-		sqlSession.insert(mapperQuery + ".insertBoard" + boardVO);
+		sqlSession.insert(mapperQuery + ".insertBoard", boardVO);
 		
 	}
 
