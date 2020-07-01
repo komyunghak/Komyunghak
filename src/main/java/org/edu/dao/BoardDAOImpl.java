@@ -42,7 +42,14 @@ public class BoardDAOImpl implements IF_BoardDAO {
 	@Override
 	public BoardVO viewBoard(Integer bno) throws Exception {
 		return sqlSession.selectOne(mapperQuery + ".viewBoard", bno);
-	} 
+	}
+
+	@Override
+	public void insertAttach(String fileName) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 

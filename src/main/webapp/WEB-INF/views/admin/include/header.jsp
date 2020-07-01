@@ -14,10 +14,16 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="/resources/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<script>
+   if('${msg}' != ""){
+      alert("${msg} 에 성공 하였습니다");
+      }
+   
+</script>
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -26,8 +32,8 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-   
     </ul>
+
     <!-- SEARCH FORM -->
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
@@ -42,7 +48,7 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-    <!--  -->
+      <!-- Notifications Dropdown Menu -->
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
             class="fas fa-th-large"></i></a>
@@ -50,6 +56,7 @@
     </ul>
   </nav>
   <!-- /.navbar -->
+  
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -69,7 +76,7 @@
         <div class="info">
           <a href="#" class="d-block">User02
           <span class="right badge badge-danger">Online</span>
-        </a>        
+          </a>
         </div>
       </div>
 
@@ -103,10 +110,11 @@
                 </a>
               </li>
             </ul>
-          </li>          
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
+  
