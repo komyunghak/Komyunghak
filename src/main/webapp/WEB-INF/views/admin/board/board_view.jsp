@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="../include/header.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="../include/header.jsp"  %>
+
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
          <!-- Content Header (Page header) -->
@@ -36,34 +37,41 @@
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
-                                 <label>Title</label><br> 
-                                 ${boardVO.title}
+                                 <label>Title</label> <br> ${boardVO.title}
                               </div>
                            </div>
 
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
-                                 <label>Content</label><br> 
+                                 <label>Content</label>
+                                 <br>
                                  <textarea name="content" class="form-control" rows="3"
-                                    placeholder="Enter Writer">${boardVO.content}</textarea>
-                                 
+                                    placeholder="Enter Writer" >${boardVO.content}</textarea>
+                                  
                               </div>
                            </div>
 
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
-                                 <label>Writer</label><br> ${boardVO.title}
+                                 <label>Writer</label> <br> ${boardVO.writer}
+                              </div>
+                              
+                              <div class="col-sm-12">
+                              <!-- text input -->
+                              <div class="form-group">
+                                 <label>FileDownlaod</label> <br> 
+                                 <a href="/download?filename=${boardVO.files[0]}">${boardVO.files[0]}</a>
                               </div>
                            </div>
-                           <div class="buttons">
+                           <div class="buttons"> <!-- 원하는 bno값을 갖고오기위해서 ?bno하고 입력구문넣어줌 -->
                               <a href="/admin/board/update?bno=${boardVO.bno}" class="btn btn-warning">UPDATE</a>
                               <button type="submit" class="btn btn-danger">DELETE</button>
-                              <a href ="/admin/board/list" class="btn btn-primary">LIST ALL</a>
+                              <a href="/admin/board/list?page=${pageVO.page}" class="btn btn-primary">LIST ALL</a>
                            </div>
                         </div>
-					 <input type="hidden" name="bno" value="${boardVO.bno}" >
+                     <input type="hidden" name="bno" value="${boardVO.bno}">
                      </form>
                   </div>
                   <!-- /.content-header -->
@@ -125,7 +133,7 @@
                            </div>
                         </div>
 
-                        
+                        </form>
                      </div>
 
                      <td>
@@ -140,19 +148,9 @@
                      <div class="content"></div>
                      <!-- .content  -->
                   </div>
-                  
                </div>
             </div>
          </div>
-         <!-- Main Footer -->
-         <footer class="main-footer">
-            <!-- To the right -->
-            <div class="float-right d-none d-sm-inline">Anything you want</div>
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2020 <a
-               href="https://adminlte.io">AdminLTE.io</a>.
-            </strong> All rights reserved.
-         </footer>
-      </div>
-      <!-- ./Content wrapper -->
- <%@ include file="../include/footer.jsp" %>
+         </div>
+         <!-- //Content Wrapper -->
+<%@ include file="../include/footer.jsp"  %>

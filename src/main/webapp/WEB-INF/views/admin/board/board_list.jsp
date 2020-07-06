@@ -74,7 +74,7 @@
                   <c:forEach items="${boardList}" var="boardVO" varStatus="status">
                   <tr>
                       <td>${boardVO.bno}</td>
-                      <td><a href="/admin/board/view?bno=${boardVO.bno}">${boardVO.title}</a></td>
+                      <td><a href="/admin/board/view?bno=${boardVO.bno}&page=${pageList.page}">${boardVO.title}</a></td>
                       <td>${board.writer}</td>
                       <td><span class="tag tag-success">${boardVO.regdate}</span></td>
                       <td><span class="badge badge-danger right">${boardVO.view_count}</span></td>
@@ -86,9 +86,21 @@
                </td>
            <td>
               <nav aria-label="Contacts Page Navigation">
-            <ul class="pagination justify-content-center m-0">
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            </ul>
+            <ul class="pagination" style="position:relative;left:40%;">
+            <c:if test="${pageList.prev}">
+            	<li class="page-item">
+            	<a class="page-link" href="/admin/board/list?page=${pageList.startPage-1}">이전</a>
+            	</li>
+            	</c:if>
+            <c:forEach begin="${pageList.startPage}" end="${pageList.endPage}" var="idx">
+            	<li class='page-item <c:out value="${idx==pageList.page?'active':''}"/>'><a href="/admin/board/list?page=${idx}" class="page-link">${idx}</a></li>
+            </c:forEach>
+             <c:if test="${pageList.next}">
+            	<li class="page-item">
+            	<a class="page-link" href="/admin/board/list?page=${pageList.endPage+1}">다음</a>
+            	</li>
+            	</c:if>
+             </ul>
           </nav>
                </td>
                 </table>
