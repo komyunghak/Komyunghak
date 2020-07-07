@@ -9,6 +9,7 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.edu.service.IF_BoardService;
 import org.edu.service.IF_MemberService;
@@ -77,12 +78,12 @@ public class AdminController {
         pageVO.setPage(1);
      } 
       pageVO.setPerPageNum(10); //1페이지당 보여줄 게시물 수 강제지정 
-      pageVO.setTotalCount(boardService.countBno());//강제로 입력한 값을 쿼리로 대체OK.
+      pageVO.setTotalCount(boardService.countBno(pageVO));//강제로 입력한 값을 쿼리로 대체OK.
       List<BoardVO> list = boardService.selectBoard(pageVO);
       //모델클래스로 jsp화면으로 boardService에서 셀렉트한 list값을 boardList변수명으로 보낸다.
       //model { list -> boardList -> jsp }
       model.addAttribute("boardList", list);
-      model.addAttribute("pageList" , pageVO);
+      model.addAttribute("pageVO" , pageVO);
       return "admin/board/board_list";
    }
    /**
@@ -119,8 +120,8 @@ public class AdminController {
       return "admin/board/board_write";
    }
    @RequestMapping(value = "/admin/board/write", method = RequestMethod.POST)
-   public String boardWrite(MultipartFile file,BoardVO boardVO,Locale locale, RedirectAttributes rdat) throws Exception {
-   //System.out.println("==첨부파일없이 저장==="file.getOriginalFilename());{
+   public String boardWrite(MultipartFile file,@Valid BoardVO boardVO,Locale locale, RedirectAttributes rdat) throws Exception {
+	   //System.out.println("==첨부파일없이 저장==="file.getOriginalFilename());{
          if(file.getOriginalFilename() =="") {
             //첨부파일 없이 저장
             boardService.insertBoard(boardVO);
@@ -138,13 +139,14 @@ public class AdminController {
     * @throws Exception 
     */
    @RequestMapping(value = "/admin/board/update", method = RequestMethod.GET)
-   public String boardUpdate(@RequestParam("bno") Integer bno, Locale locale, Model model) throws Exception {
+   public String boardUpdate(@ModelAttribute("pageVO") PageVO pageVO, @RequestParam("bno") Integer bno, Locale locale, Model model) throws Exception {
       BoardVO boardVO = boardService.viewBoard(bno);
       model.addAttribute("boardVO", boardVO);
+      model.addAttribute("pageVO", pageVO);
       return "admin/board/board_update";
    }
    @RequestMapping(value = "/admin/board/update", method = RequestMethod.POST)
-   public String boardUpdate(MultipartFile file,BoardVO boardVO,Locale locale, RedirectAttributes rdat) throws Exception {
+   public String boardUpdate(@ModelAttribute("pageVO") PageVO pageVO,MultipartFile file,@Valid BoardVO boardVO,Locale locale, RedirectAttributes rdat) throws Exception {
       if(file.getOriginalFilename() == "") {
          boardService.updateBoard(boardVO);
       }else {
@@ -165,7 +167,7 @@ public class AdminController {
       
       
       rdat.addFlashAttribute("msg", "수정");
-      return "redirect:/admin/board/view?bno=" + boardVO.getBno();
+      return "redirect:/admin/board/view?bno=" + boardVO.getBno() + "&page=" + pageVO.getPage();
    }
       /**
     * 게시물관리 > 삭제 입니다.

@@ -37,7 +37,8 @@
                            <div class="col-sm-12">
                               <!-- text input -->
                               <div class="form-group">
-                                 <label>Title</label> <input name="title" type="text" class="form-control"
+                                 <label>Title</label> 
+                                 <input name="title" type="text" class="form-control"
                                     placeholder="Enter Title">
                               </div>
                            </div>

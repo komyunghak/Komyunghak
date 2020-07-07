@@ -69,8 +69,8 @@ public void updateAttach(String fullName, Integer bno) throws Exception {
    }
 
 @Override
-public int countBno() throws Exception {
-	return sqlSession.selectOne(mapperQuery + ".countBno");
+public int countBno(PageVO pageVO) throws Exception {
+	return sqlSession.selectOne(mapperQuery + ".countBno", pageVO);
 }
 
    

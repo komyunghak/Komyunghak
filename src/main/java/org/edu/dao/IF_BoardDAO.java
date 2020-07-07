@@ -15,5 +15,5 @@ public interface IF_BoardDAO {
    public List<String> selectAttach(Integer bno) throws Exception;//파일첨부시이름표시
    public void deleteAttach(Integer bno) throws Exception;
    public void updateAttach(String fullName, Integer bno) throws Exception;
-   public int countBno() throws Exception;
+   public int countBno(PageVO pageVO) throws Exception;
 }
