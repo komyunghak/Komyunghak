@@ -79,9 +79,9 @@
                         </select>
                      <br>
                      <div class = "buttons">
-                           <a href="/admin/member/update?user_id=${memberVO.user_id}" class="btn btn-warning">UPDATE</a>
+                           <a href="/admin/member/update?user_id=${memberVO.user_id}&page=${pageVO.page}" class="btn btn-warning">UPDATE</a>
                            <button type="submit" class="btn btn-danger">delete</button>
-                           <a href="/admin/member/list" class="btn btn-primary">LIST</a>
+                           <a href="/admin/member/list?page=${pageVO.page}" class="btn btn-primary">LIST</a>
                         </div>
                         </div>
                         </div>

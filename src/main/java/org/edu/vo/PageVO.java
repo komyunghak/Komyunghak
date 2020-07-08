@@ -1,7 +1,7 @@
 package org.edu.vo;
 
 public class PageVO {
-	private int startBno;
+	private int startNo;//게시판테이블,회원테이블의 필드와는 직접관계는없음.
 	private int perPageNum;
 	private Integer page; //(선생님 주석jsp단에서 null로 값이 올떄 에러가 발생하지 않도록 Integer사용) 내 주석  이것만 인티저를 사용하는 이유로는 private 는 그 페이지안에서만 쓰는것이지만 integer는 jsp에서부터 오는거라서 사용한다. 예를들면 원래는 page가 null이지만 인트에서는 널이 사용 불가능하다(숫자x) 하지만 integer는 널이 사용가능하므로 page(null사용)
 	private int totalCount;
@@ -85,13 +85,13 @@ public class PageVO {
 	public void setPage(Integer page) {
 		this.page = page;
 	}
-	public int getStartBno() {
+	public int getStartNo() {
 		//DB쿼리에서 사용... 시작데이터번호 = (jsp클릭한 페이지번호-1)*페이지당 보여지는 개수
-		startBno = (this. page - 1) * perPageNum;
-		return startBno;
+		startNo = (this. page - 1) * perPageNum;
+		return startNo;
 	}
-	public void setStartBno(int startBno) {
-		this.startBno = startBno;
+	public void setStartNo(int startNo) {
+		this.startNo = startNo;
 	}
 	public int getPerPageNum() {
 		return perPageNum;
