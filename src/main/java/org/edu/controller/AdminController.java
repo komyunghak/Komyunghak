@@ -121,7 +121,7 @@ public class AdminController {
    }
    @RequestMapping(value = "/admin/board/write", method = RequestMethod.POST)
    public String boardWrite(MultipartFile file,@Valid BoardVO boardVO,Locale locale, RedirectAttributes rdat) throws Exception {
-	   //System.out.println("==첨부파일없이 저장==="file.getOriginalFilename());{
+      //System.out.println("==첨부파일없이 저장==="file.getOriginalFilename());{
          if(file.getOriginalFilename() =="") {
             //첨부파일 없이 저장
             boardService.insertBoard(boardVO);
