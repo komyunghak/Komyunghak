@@ -115,5 +115,5 @@
       <!-- //app_area -->
       
    </div>
-   <!-- //container -->
+   <!-- //Content Wrapper -->
 <%@ include file="include/footer.jsp"  %>
