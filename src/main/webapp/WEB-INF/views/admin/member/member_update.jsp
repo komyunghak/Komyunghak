@@ -78,8 +78,8 @@
                               </div>
                            </div>
                            <div class="form-group">
-                        <label>enabled</label>
-                        <select class="form-control">
+                        <label>enabled == ${memberVO.enabled}</label>
+                        <select name="enabled" class="form-control">
                           <option value="0" <c:out value="${(memberVO.enabled eq 'false')?('selected'):''}" />
                           >
                           false</option>

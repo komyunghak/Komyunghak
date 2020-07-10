@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,9 +20,9 @@
    <script src="/resources/home/js/placeholders.min.js"></script>
 <![endif]-->
 <script>
-if('${msg}'!= ""){
-   alert("${msg}에 성공하였습니다.!");   
-}
+   if('${msg}' != ""){
+      alert("${msg}에 성공 하였습니다");
+      }
 </script>
 </head>
 <body>
@@ -38,8 +39,23 @@ if('${msg}'!= ""){
          <!-- header_cont -->
          <div class="header_cont">
             <ul class="util clear">
-               <li><a href="/login">로그인</a></li>
-               <li><a href="/admin">관리자</a></li>
+            <c:choose>
+            <c:when test="${session_enabled eq 'true'}">
+				        <li><span style="color:white">${session_username}님[${session_userid}] 환영합니다!</span></li>
+				        <li><a href="/logout">로그아웃</a>
+				        </li>
+				        <c:if test="${session_levels eq 'ROLE_ADMIN' }">
+				            <li><a href="/admin">관리자</a>
+				            </li>
+				        </c:if>	
+				    </c:when>
+				    <c:otherwise>
+				        <li><a href="/login">로그인</a>
+				        </li>
+				        <li><a href="#">회원가입</a>
+				        </li>
+				    </c:otherwise>
+            </c:choose>
             </ul>   
             <nav>
             <ul class="gnb clear">

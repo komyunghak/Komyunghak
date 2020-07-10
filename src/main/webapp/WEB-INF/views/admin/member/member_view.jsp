@@ -69,13 +69,20 @@
                            </div>
                            <div class="form-group">
                         <label>enabled</label>
-                        <select class="form-control">
-                          <option>false</option>
-                          <option>true</option>
+                        <select name="enabled" class="form-control">
+                          <option value="0" <c:out value="${(memberVO.enabled eq 'false')?('selected'):''}" />
+                          >
+                          false</option>
+                          <option value="1" <c:out value="${(memberVO.enabled eq 'true')?('selected'):''}" />
+                          >
+                          true</option>
                         </select>
                         <label>levels</label>
-                        <select class="form-control">
-                          <option>ROLE_USER</option>
+                        <select name="levels" class="form-control">
+                          <option value="ROLE_USER"
+                          <c:out value="${memberVO.levels eq 'ROLE_USER'?'selected':''}" />>ROLE_USER</option>
+                          <option value="ROLE_ADMIN"
+                          <c:out value="${memberVO.levels eq 'ROLE_ADMIN'?'selected':''}" />>ROLE_ADMIN</option>
                         </select>
                      <br>
                      <div class = "buttons">

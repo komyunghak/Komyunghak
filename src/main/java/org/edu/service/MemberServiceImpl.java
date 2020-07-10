@@ -7,16 +7,19 @@ import javax.inject.Inject;
 import org.edu.dao.IF_MemberDAO;
 import org.edu.vo.MemberVO;
 import org.edu.vo.PageVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MemberServiceImpl implements IF_MemberService{
+public class MemberServiceImpl implements IF_MemberService {
+
 	@Inject
 	private IF_MemberDAO memberDAO;
 	
 	@Override
 	public void insertMember(MemberVO memberVO) throws Exception {
-		memberDAO.insertMember(memberVO);
+		memberDAO.insertMember(memberVO);		
 	}
 
 	@Override
@@ -32,7 +35,6 @@ public class MemberServiceImpl implements IF_MemberService{
 	@Override
 	public void deleteMember(String user_id) throws Exception {
 		memberDAO.deleteMember(user_id);
-		
 	}
 
 	@Override
@@ -44,4 +46,5 @@ public class MemberServiceImpl implements IF_MemberService{
 	public int countUserId(PageVO pageVO) throws Exception {
 		return memberDAO.countUserId(pageVO);
 	}
+
 }
