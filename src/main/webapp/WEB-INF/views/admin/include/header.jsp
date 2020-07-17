@@ -21,6 +21,8 @@
       }
    
 </script>
+<!-- jQuery코어-->
+<script src="/resources/plugins/jquery/jquery.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 

@@ -33,6 +33,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
    
    @Inject
@@ -48,7 +49,7 @@ public class AdminController {
     * 게시물관리 리스트 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/board/list", method = RequestMethod.GET)
+   @RequestMapping(value = "/board/list", method = RequestMethod.GET)
    public String boardList(@ModelAttribute("pageVO") PageVO pageVO , Locale locale, Model model) throws Exception {
       //PageVO pageVO = new PageVO();//매개변수로 받기전에 테스트용
      if(pageVO.getPage() == null) { //초기 page변수값 지정
@@ -68,7 +69,7 @@ public class AdminController {
     * 게시물관리 상세보기 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/board/view", method = RequestMethod.GET)
+   @RequestMapping(value = "/board/view", method = RequestMethod.GET)
       public String boardView(@ModelAttribute("pageVO") PageVO pageVO,@RequestParam("bno") Integer bno,Locale locale, Model model) throws Exception {
          BoardVO boardVO = boardService.viewBoard(bno);
          // 여기서 부터 첨부파일 출력물
@@ -92,12 +93,12 @@ public class AdminController {
     * 게시물관리 > 등록 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/board/write", method = RequestMethod.GET)
+   @RequestMapping(value = "/board/write", method = RequestMethod.GET)
    public String boardWrite(Locale locale, Model model) throws Exception {
       
       return "admin/board/board_write";
    }
-   @RequestMapping(value = "/admin/board/write", method = RequestMethod.POST)
+   @RequestMapping(value = "/board/write", method = RequestMethod.POST)
   public String boardWrite(MultipartFile file,@Valid BoardVO boardVO,Locale locale, RedirectAttributes rdat) throws Exception {
   
       //System.out.println("==첨부파일없이 저장==="file.getOriginalFilename());{
@@ -117,14 +118,14 @@ public class AdminController {
     * 게시물관리 > 수정 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/board/update", method = RequestMethod.GET)
+   @RequestMapping(value = "/board/update", method = RequestMethod.GET)
    public String boardUpdate(@ModelAttribute("pageVO") PageVO pageVO,@RequestParam("bno") Integer bno, Locale locale, Model model) throws Exception {
       BoardVO boardVO = boardService.viewBoard(bno);
       model.addAttribute("boardVO", boardVO);
       model.addAttribute("pageVO", pageVO);
       return "admin/board/board_update";
    }
-   @RequestMapping(value = "/admin/board/update", method = RequestMethod.POST)
+   @RequestMapping(value = "/board/update", method = RequestMethod.POST)
    public String boardUpdate(@ModelAttribute("pageVO") PageVO pageVO,MultipartFile file,@Valid BoardVO boardVO,Locale locale, RedirectAttributes rdat) throws Exception {
       if(file.getOriginalFilename() == "") {
          boardService.updateBoard(boardVO);
@@ -152,7 +153,7 @@ public class AdminController {
     * 게시물관리 > 삭제 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/board/delete", method = RequestMethod.POST)
+   @RequestMapping(value = "/board/delete", method = RequestMethod.POST)
    public String boardDelete(@RequestParam("bno") Integer bno, Locale locale,RedirectAttributes rdat) throws Exception {   
    List<String> files = boardService.selectAttach(bno);
     boardService.deleteBoard(bno);
@@ -173,7 +174,7 @@ public class AdminController {
     * 회원관리 리스트 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/member/list", method = RequestMethod.GET)
+   @RequestMapping(value = "/member/list", method = RequestMethod.GET)
    public String memberList(@ModelAttribute("pageVO") PageVO pageVO,Locale locale, Model model) throws Exception {
       if(pageVO.getPage()==null) {
          pageVO.setPage(1);     
@@ -192,7 +193,7 @@ public class AdminController {
     * 회원관리 상세보기 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/member/view", method = RequestMethod.GET)
+   @RequestMapping(value = "/member/view", method = RequestMethod.GET)
    public String memberView(@ModelAttribute("pageVO") PageVO pageVO,@RequestParam("user_id") String user_id, Locale locale, Model model) throws Exception {
       MemberVO memberVO = memberService.viewMember(user_id);
       model.addAttribute("pageVO",pageVO);
@@ -204,12 +205,12 @@ public class AdminController {
     * 회원관리 > 등록 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/member/write", method = RequestMethod.GET)
+   @RequestMapping(value = "/member/write", method = RequestMethod.GET)
    public String memberWrite(Locale locale, Model model) throws Exception {
       
       return "admin/member/member_write";
    }
-   @RequestMapping(value = "/admin/member/write", method = RequestMethod.POST)
+   @RequestMapping(value = "/member/write", method = RequestMethod.POST)
    public String memberWrite(@Valid MemberVO memberVO, Locale locale, RedirectAttributes rdat) throws Exception {
       String new_pw = memberVO.getUser_pw(); //1234
       if(new_pw !="") {
@@ -226,14 +227,14 @@ public class AdminController {
     * 회원관리 > 수정 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/member/update", method = RequestMethod.GET)
+   @RequestMapping(value = "/member/update", method = RequestMethod.GET)
    public String memberUpdate(@ModelAttribute("pageVO") PageVO pageVO,@RequestParam("user_id") String user_id, Locale locale, Model model) throws Exception {
       MemberVO memberVO = memberService.viewMember(user_id);
       model.addAttribute("memberVO", memberVO);
       model.addAttribute("PageVO", pageVO);
       return "admin/member/member_update";
    }
-   @RequestMapping(value = "/admin/member/update", method = RequestMethod.POST)
+   @RequestMapping(value = "/member/update", method = RequestMethod.POST)
    public String memberUpdate(@ModelAttribute("pageVO") PageVO pageVO,MemberVO memberVO, Locale locale, RedirectAttributes rdat) throws Exception {
       String new_pw = memberVO.getUser_pw(); //예를 들면1234
       if(new_pw !="") {
@@ -251,7 +252,7 @@ public class AdminController {
     * 회원관리 > 삭제 입니다.
     * @throws Exception 
     */
-   @RequestMapping(value = "/admin/member/delete", method = RequestMethod.POST)
+   @RequestMapping(value = "/member/delete", method = RequestMethod.POST)
    public String memberDelete(@RequestParam("user_id") String user_id, Locale locale,RedirectAttributes rdat) throws Exception {
       memberService.deleteMember(user_id);
       rdat.addFlashAttribute("msg","삭제");
@@ -261,7 +262,7 @@ public class AdminController {
    /**
     * 관리자 홈 입니다.
     */
-   @RequestMapping(value = "/admin", method = RequestMethod.GET)
+   @RequestMapping(value = "", method = RequestMethod.GET)
    public String home(Locale locale, Model model) {
    return "admin/home";
    }
