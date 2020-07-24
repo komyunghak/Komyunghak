@@ -1,0 +1,839 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 407856 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:389), pid=7756, tid=0x0000000000001834
+#
+# JRE version: OpenJDK Runtime Environment (8.0_212-b04) (build 1.8.0_212-1-ojdkbuild-b04)
+# Java VM: OpenJDK 64-Bit Server VM (25.212-b04 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000556e9000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=6196, stack(0x0000000056d10000,0x0000000056e10000)]
+
+Stack: [0x0000000056d10000,0x0000000056e10000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:   1816 1767       4       java.net.URLStreamHandler::parseURL (1193 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000058139800 JavaThread "Keep-Alive-Timer" daemon [_thread_blocked, id=7856, stack(0x00000000598f0000,0x00000000599f0000)]
+  0x00000000574b0000 JavaThread "ReaderThread" [_thread_in_native, id=4756, stack(0x0000000057d50000,0x0000000057e50000)]
+  0x0000000055796000 JavaThread "Service Thread" daemon [_thread_blocked, id=3256, stack(0x0000000057170000,0x0000000057270000)]
+  0x0000000055712000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=5340, stack(0x0000000056f70000,0x0000000057070000)]
+  0x000000005570f000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=4672, stack(0x0000000056340000,0x0000000056440000)]
+=>0x00000000556e9000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=6196, stack(0x0000000056d10000,0x0000000056e10000)]
+  0x00000000556f7800 JavaThread "Attach Listener" daemon [_thread_blocked, id=6660, stack(0x0000000056b80000,0x0000000056c80000)]
+  0x00000000556f6800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6844, stack(0x0000000056a30000,0x0000000056b30000)]
+  0x0000000054fcf000 JavaThread "Finalizer" daemon [_thread_blocked, id=5440, stack(0x0000000056860000,0x0000000056960000)]
+  0x00000000556c3800 JavaThread "Reference Handler" daemon [_thread_blocked, id=124, stack(0x0000000056690000,0x0000000056790000)]
+  0x00000000023ae800 JavaThread "main" [_thread_in_vm, id=5128, stack(0x0000000002770000,0x0000000002870000)]
+
+Other Threads:
+  0x0000000054f50800 VMThread [stack: 0x0000000056440000,0x0000000056540000] [id=3464]
+  0x000000005579f000 WatcherThread [stack: 0x0000000057290000,0x0000000057390000] [id=5780]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000c1200000, size: 1006 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+Compressed class space size: 1073741824 Address: 0x00000000145e0000
+
+Heap:
+ PSYoungGen      total 35328K, used 7716K [0x00000000eb100000, 0x00000000ed600000, 0x0000000100000000)
+  eden space 32768K, 15% used [0x00000000eb100000,0x00000000eb60d150,0x00000000ed100000)
+  from space 2560K, 99% used [0x00000000ed380000,0x00000000ed5fc030,0x00000000ed600000)
+  to   space 2560K, 0% used [0x00000000ed100000,0x00000000ed100000,0x00000000ed380000)
+ ParOldGen       total 44032K, used 8091K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 18% used [0x00000000c1200000,0x00000000c19e6f18,0x00000000c3d00000)
+ Metaspace       used 19829K, capacity 20110K, committed 20480K, reserved 1067008K
+  class space    used 2167K, capacity 2257K, committed 2304K, reserved 1048576K
+
+Card table byte_map: [0x0000000011c30000,0x0000000011e30000] byte_map_base: 0x0000000011627000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006fc4aec0
+ Begin Bits: [0x0000000012470000, 0x0000000013428000)
+ End Bits:   [0x0000000013428000, 0x00000000143e0000)
+
+Polling page: 0x0000000000330000
+
+CodeCache: size=245760Kb used=6312Kb max_used=6312Kb free=239447Kb
+ bounds [0x0000000002870000, 0x0000000002ea0000, 0x0000000011870000]
+ total_blobs=2179 nmethods=1768 adapters=324
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 1.619 Thread 0x0000000055712000 1655       3       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOMParser::startCDATA (16 bytes)
+Event: 1.619 Thread 0x0000000055712000 nmethod 1655 0x0000000002e25390 code [0x0000000002e25520, 0x0000000002e259e8]
+Event: 1.619 Thread 0x0000000055712000 1656       3       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOM::startAnnotationCDATA (16 bytes)
+Event: 1.620 Thread 0x0000000055712000 nmethod 1656 0x0000000002e25bd0 code [0x0000000002e25d40, 0x0000000002e26168]
+Event: 1.620 Thread 0x0000000055712000 1657       3       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOMParser::endCDATA (16 bytes)
+Event: 1.620 Thread 0x0000000055712000 nmethod 1657 0x0000000002e262d0 code [0x0000000002e26460, 0x0000000002e26928]
+Event: 1.620 Thread 0x0000000055712000 1658       3       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOM::endAnnotationCDATA (16 bytes)
+Event: 1.620 Thread 0x0000000055712000 nmethod 1658 0x0000000002e26b10 code [0x0000000002e26c80, 0x0000000002e270a8]
+Event: 1.620 Thread 0x0000000055712000 1659       3       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOMParser::emptyElement (387 bytes)
+Event: 1.623 Thread 0x0000000055712000 nmethod 1659 0x0000000002e28710 code [0x0000000002e28c80, 0x0000000002e2c518]
+Event: 1.623 Thread 0x0000000055712000 1662       3       com.sun.org.apache.xerces.internal.util.XMLChar::isName (23 bytes)
+Event: 1.623 Thread 0x0000000055712000 nmethod 1662 0x0000000002e2e710 code [0x0000000002e2e880, 0x0000000002e2ea70]
+Event: 1.623 Thread 0x0000000055712000 1661       3       com.sun.org.apache.xerces.internal.impl.xs.opti.ElementImpl::getAttribute (50 bytes)
+Event: 1.623 Thread 0x0000000055712000 nmethod 1661 0x0000000002e2eb50 code [0x0000000002e2ed00, 0x0000000002e2f1c8]
+Event: 1.623 Thread 0x0000000055712000 1666       3       com.sun.org.apache.xerces.internal.util.SymbolHash::put (158 bytes)
+Event: 1.624 Thread 0x0000000055712000 nmethod 1666 0x0000000002e34a50 code [0x0000000002e34ce0, 0x0000000002e35f78]
+Event: 1.624 Thread 0x0000000055712000 1667       3       com.sun.org.apache.xerces.internal.util.SymbolHash$Entry::<init> (20 bytes)
+Event: 1.624 Thread 0x0000000055712000 nmethod 1667 0x0000000002e36790 code [0x0000000002e368e0, 0x0000000002e36ad0]
+Event: 1.624 Thread 0x0000000055712000 1664       3       com.sun.org.apache.xerces.internal.util.DOMUtil::getRoot (7 bytes)
+Event: 1.624 Thread 0x0000000055712000 nmethod 1664 0x0000000002e36b90 code [0x0000000002e36d00, 0x0000000002e36ee8]
+Event: 1.624 Thread 0x0000000055712000 1665       3       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOM::getDocumentElement (12 bytes)
+Event: 1.624 Thread 0x0000000055712000 nmethod 1665 0x0000000002e36f90 code [0x0000000002e37100, 0x0000000002e37390]
+Event: 1.624 Thread 0x0000000055712000 1663       3       com.sun.org.apache.xerces.internal.impl.xs.util.XInt::shortValue (6 bytes)
+Event: 1.624 Thread 0x0000000055712000 nmethod 1663 0x0000000002e374d0 code [0x0000000002e37620, 0x0000000002e37770]
+Event: 1.624 Thread 0x0000000055712000 1669       3       com.sun.org.apache.xerces.internal.impl.xs.util.XSObjectListImpl::item (21 bytes)
+Event: 1.624 Thread 0x0000000055712000 nmethod 1669 0x0000000002e377d0 code [0x0000000002e37940, 0x0000000002e37b50]
+Event: 1.624 Thread 0x0000000055712000 1660       3       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOM::emptyElement (25 bytes)
+Event: 1.625 Thread 0x0000000055712000 nmethod 1660 0x0000000002e37c50 code [0x0000000002e37dc0, 0x0000000002e38018]
+Event: 1.625 Thread 0x0000000055712000 1668       1       com.sun.org.apache.xerces.internal.impl.xs.util.XSObjectListImpl::getLength (5 bytes)
+Event: 1.625 Thread 0x0000000055712000 nmethod 1668 0x0000000002e38110 code [0x0000000002e38260, 0x0000000002e38370]
+Event: 1.625 Thread 0x0000000055712000 1670       3       com.sun.org.apache.xerces.internal.impl.dtd.models.CMStateSet::getBit (99 bytes)
+Event: 1.625 Thread 0x0000000055712000 nmethod 1670 0x0000000002e383d0 code [0x0000000002e38560, 0x0000000002e389e8]
+Event: 1.625 Thread 0x0000000055712000 1671       3       com.sun.org.apache.xerces.internal.impl.dtd.models.CMStateSet::union (72 bytes)
+Event: 1.625 Thread 0x0000000055712000 nmethod 1671 0x0000000002e38b90 code [0x0000000002e38d00, 0x0000000002e38fd0]
+Event: 1.625 Thread 0x0000000055712000 1672       3       java.util.LinkedList$ListItr::next (56 bytes)
+Event: 1.626 Thread 0x0000000055712000 nmethod 1672 0x0000000002e39190 code [0x0000000002e39340, 0x0000000002e397f8]
+Event: 1.626 Thread 0x0000000055712000 1673       3       java.util.LinkedList$ListItr::checkForComodification (23 bytes)
+Event: 1.626 Thread 0x0000000055712000 nmethod 1673 0x0000000002e399d0 code [0x0000000002e39b40, 0x0000000002e39d68]
+Event: 1.627 Thread 0x00000000556e9000 nmethod 1509 0x0000000002e39e50 code [0x0000000002e3a0e0, 0x0000000002e3e000]
+Event: 1.627 Thread 0x00000000556e9000 1556 %     4       com.sun.org.apache.xerces.internal.impl.io.UTF8Reader::read @ 113 (1443 bytes)
+Event: 1.627 Thread 0x0000000055712000 1675       3       com.sun.org.apache.xerces.internal.util.XMLStringBuffer::append (17 bytes)
+Event: 1.627 Thread 0x0000000055712000 nmethod 1675 0x0000000002e28310 code [0x0000000002e28480, 0x0000000002e28628]
+Event: 1.627 Thread 0x0000000055712000 1676       3       com.sun.org.apache.xerces.internal.utils.XMLLimitAnalyzer::addValue (260 bytes)
+Event: 1.629 Thread 0x0000000055712000 nmethod 1676 0x0000000002e32010 code [0x0000000002e32300, 0x0000000002e33c48]
+Event: 1.632 Thread 0x0000000055712000 1679       3       com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl::scanContent (171 bytes)
+Event: 1.633 Thread 0x0000000055712000 nmethod 1679 0x0000000002e30e50 code [0x0000000002e310c0, 0x0000000002e31ad8]
+Event: 1.634 Thread 0x0000000055712000 1680       3       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanQName (502 bytes)
+Event: 1.636 Thread 0x0000000055712000 nmethod 1680 0x0000000002e40290 code [0x0000000002e40560, 0x0000000002e41788]
+Event: 1.638 Thread 0x0000000055712000 1682       3       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOM::resizeRelations (59 bytes)
+Event: 1.638 Thread 0x0000000055712000 nmethod 1682 0x0000000002e27a90 code [0x0000000002e27c20, 0x0000000002e28148]
+Event: 1.639 Thread 0x00000000556e9000 nmethod 1556% 0x0000000002e44490 code [0x0000000002e44600, 0x0000000002e44f38]
+Event: 1.639 Thread 0x00000000556e9000 1677       4       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::peekChar (63 bytes)
+Event: 1.640 Thread 0x00000000556e9000 nmethod 1677 0x0000000002e2f590 code [0x0000000002e2f6e0, 0x0000000002e2f808]
+Event: 1.640 Thread 0x00000000556e9000 1674       4       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanContent (690 bytes)
+Event: 1.641 Thread 0x0000000055712000 1686       2       com.sun.org.apache.xerces.internal.util.DOMUtil::getAttrValue (8 bytes)
+Event: 1.641 Thread 0x0000000055712000 nmethod 1686 0x0000000002e27710 code [0x0000000002e27880, 0x0000000002e279e8]
+Event: 1.641 Thread 0x0000000055712000 1687       2       com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler::checkForDuplicateNames (723 bytes)
+Event: 1.644 Thread 0x0000000055712000 nmethod 1687 0x0000000002e45710 code [0x0000000002e45c80, 0x0000000002e47f38]
+Event: 1.645 Thread 0x0000000055712000 1688       2       com.sun.org.apache.xerces.internal.impl.xs.XSAttributeDecl::<init> (55 bytes)
+Event: 1.645 Thread 0x0000000055712000 nmethod 1688 0x0000000002e27350 code [0x0000000002e274a0, 0x0000000002e27690]
+Event: 1.645 Thread 0x0000000055712000 1689       2       com.sun.org.apache.xerces.internal.impl.xs.opti.NodeImpl::setReadOnly (6 bytes)
+Event: 1.645 Thread 0x0000000055712000 nmethod 1689 0x0000000002e30b50 code [0x0000000002e30ca0, 0x0000000002e30df0]
+Event: 1.645 Thread 0x0000000055712000 1690   !   2       com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDAttributeTraverser::traverseLocal (726 bytes)
+Event: 1.648 Thread 0x0000000055712000 nmethod 1690 0x0000000002e4a210 code [0x0000000002e4a5c0, 0x0000000002e4bf98]
+Event: 1.648 Thread 0x0000000055712000 1691       2       com.sun.org.apache.xerces.internal.impl.xs.XSAttributeDecl::setValues (46 bytes)
+Event: 1.648 Thread 0x0000000055712000 nmethod 1691 0x0000000002e30790 code [0x0000000002e308e0, 0x0000000002e30ab0]
+Event: 1.649 Thread 0x0000000055712000 1692       1       com.sun.org.apache.xerces.internal.impl.dv.xs.TypeValidator::checkExtraRules (1 bytes)
+Event: 1.649 Thread 0x0000000055712000 nmethod 1692 0x0000000002e304d0 code [0x0000000002e30620, 0x0000000002e30730]
+Event: 1.649 Thread 0x0000000055712000 1693       2       com.sun.org.apache.xerces.internal.util.DOMUtil::setHidden (30 bytes)
+Event: 1.649 Thread 0x0000000055712000 nmethod 1693 0x0000000002e30090 code [0x0000000002e30200, 0x0000000002e30408]
+Event: 1.650 Thread 0x0000000055712000 1694       2       com.sun.org.apache.xerces.internal.impl.xs.XSAttributeGroupDecl::getAttributeUseNoProhibited (70 bytes)
+Event: 1.650 Thread 0x0000000055712000 nmethod 1694 0x0000000002e2fb90 code [0x0000000002e2fd00, 0x0000000002e2ff10]
+Event: 1.650 Thread 0x0000000055712000 1695       2       com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDAbstractTraverser::traverseAnnotationDecl (524 bytes)
+Event: 1.653 Thread 0x0000000055712000 nmethod 1695 0x0000000002e4fb90 code [0x0000000002e4ffa0, 0x0000000002e523f8]
+Event: 1.653 Thread 0x0000000055712000 1696       2       com.sun.org.apache.xerces.internal.util.DOMUtil::getAnnotation (17 bytes)
+Event: 1.653 Thread 0x00000000556e9000 nmethod 1674 0x0000000002e54510 code [0x0000000002e546a0, 0x0000000002e54e28]
+Event: 1.653 Thread 0x0000000055712000 nmethod 1696 0x0000000002e4f7d0 code [0x0000000002e4f920, 0x0000000002e4fad0]
+Event: 1.653 Thread 0x00000000556e9000 1683       4       com.sun.org.apache.xerces.internal.impl.io.UTF8Reader::read (1443 bytes)
+Event: 1.653 Thread 0x0000000055712000 1697       2       com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler::getGrammar (9 bytes)
+Event: 1.653 Thread 0x0000000055712000 nmethod 1697 0x0000000002e4f390 code [0x0000000002e4f500, 0x0000000002e4f6c8]
+Event: 1.653 Thread 0x0000000055712000 1698       2       com.sun.org.apache.xerces.internal.impl.xs.XSAnnotationImpl::<init> (25 bytes)
+Event: 1.654 Thread 0x0000000055712000 nmethod 1698 0x0000000002e4f010 code [0x0000000002e4f160, 0x0000000002e4f2f0]
+Event: 1.654 Thread 0x0000000055712000 1700   !   2       com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDAttributeTraverser::traverseNamedAttr (977 bytes)
+Event: 1.658 Thread 0x0000000055712000 nmethod 1700 0x0000000002e55490 code [0x0000000002e559c0, 0x0000000002e57e48]
+Event: 1.658 Thread 0x0000000055712000 1706       3       com.sun.org.apache.xerces.internal.impl.dtd.models.CMStateSet::<init> (81 bytes)
+Event: 1.658 Thread 0x0000000055712000 nmethod 1706 0x0000000002e4e810 code [0x0000000002e4e9a0, 0x0000000002e4ee78]
+Event: 1.658 Thread 0x0000000055712000 1701       2       com.sun.org.apache.xerces.internal.util.DOMUtil::getParent (21 bytes)
+Event: 1.658 Thread 0x0000000055712000 nmethod 1701 0x0000000002e4e3d0 code [0x0000000002e4e540, 0x0000000002e4e748]
+Event: 1.658 Thread 0x0000000055712000 1702       3       com.sun.org.apache.xerces.internal.util.DOMUtil::getDocument (7 bytes)
+Event: 1.658 Thread 0x0000000055712000 nmethod 1702 0x0000000002e4dfd0 code [0x0000000002e4e140, 0x0000000002e4e328]
+Event: 1.658 Thread 0x0000000055712000 1703       3       com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler::getGlobalDeclFromGrammar (118 bytes)
+Event: 1.660 Thread 0x0000000055712000 nmethod 1703 0x0000000002e5b390 code [0x0000000002e5b6e0, 0x0000000002e5cf98]
+Event: 1.660 Thread 0x0000000055712000 1711       1       com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator$XPathMatcherStack::getMatcherCount (5 bytes)
+Event: 1.660 Thread 0x0000000055712000 nmethod 1711 0x0000000002e4dcd0 code [0x0000000002e4de20, 0x0000000002e4df30]
+Event: 1.660 Thread 0x0000000055712000 1704       3       com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDAbstractTraverser::checkOccurrences (316 bytes)
+Event: 1.661 Thread 0x0000000055712000 nmethod 1704 0x0000000002e5df10 code [0x0000000002e5e1c0, 0x0000000002e5faa8]
+Event: 1.661 Thread 0x0000000055712000 1709       1       com.sun.org.apache.xerces.internal.impl.xs.AttributePSVImpl::getMemberTypeDefinition (5 bytes)
+Event: 1.661 Thread 0x0000000055712000 nmethod 1709 0x0000000002e441d0 code [0x0000000002e44320, 0x0000000002e44430]
+Event: 1.661 Thread 0x0000000055712000 1710       1       com.sun.org.apache.xerces.internal.impl.xs.AttributePSVImpl::getTypeDefinition (5 bytes)
+Event: 1.661 Thread 0x0000000055712000 nmethod 1710 0x0000000002e43f10 code [0x0000000002e44060, 0x0000000002e44170]
+Event: 1.661 Thread 0x0000000055712000 1705       1       com.sun.org.apache.xerces.internal.impl.xs.models.XSCMLeaf::getPosition (5 bytes)
+Event: 1.661 Thread 0x0000000055712000 nmethod 1705 0x0000000002e43c50 code [0x0000000002e43da0, 0x0000000002e43eb0]
+Event: 1.661 Thread 0x0000000055712000 1707       1       com.sun.org.apache.xerces.internal.impl.xs.models.XSCMLeaf::getLeaf (5 bytes)
+Event: 1.661 Thread 0x0000000055712000 nmethod 1707 0x0000000002e43990 code [0x0000000002e43ae0, 0x0000000002e43bf0]
+Event: 1.661 Thread 0x0000000055712000 1708       1       com.sun.org.apache.xerces.internal.impl.dtd.models.CMNode::getUserData (5 bytes)
+Event: 1.661 Thread 0x0000000055712000 nmethod 1708 0x0000000002e436d0 code [0x0000000002e43820, 0x0000000002e43930]
+Event: 1.661 Thread 0x0000000055712000 1699       1       com.sun.org.apache.xerces.internal.impl.xs.XSElementDecl::getNamespaceItem (5 bytes)
+Event: 1.661 Thread 0x0000000055712000 nmethod 1699 0x0000000002e43410 code [0x0000000002e43560, 0x0000000002e43670]
+Event: 1.661 Thread 0x0000000055712000 1712       1       com.sun.org.apache.xerces.internal.dom.DocumentImpl::getMutationEvents (5 bytes)
+Event: 1.661 Thread 0x0000000055712000 nmethod 1712 0x0000000002e43150 code [0x0000000002e432a0, 0x0000000002e433b0]
+Event: 1.664 Thread 0x0000000055712000 1713       3       sun.misc.JarIndex::get (49 bytes)
+Event: 1.664 Thread 0x0000000055712000 nmethod 1713 0x0000000002e605d0 code [0x0000000002e607a0, 0x0000000002e60fd8]
+Event: 1.667 Thread 0x0000000055712000 1714       3       java.lang.Character::getType (9 bytes)
+Event: 1.667 Thread 0x0000000055712000 nmethod 1714 0x0000000002e42cd0 code [0x0000000002e42e40, 0x0000000002e43078]
+Event: 1.667 Thread 0x0000000055712000 1715       3       java.lang.CharacterDataLatin1::getType (11 bytes)
+Event: 1.667 Thread 0x0000000055712000 nmethod 1715 0x0000000002e42810 code [0x0000000002e42980, 0x0000000002e42b70]
+Event: 1.668 Thread 0x00000000556e9000 nmethod 1683 0x0000000002e64a10 code [0x0000000002e64ba0, 0x0000000002e65648]
+Event: 1.669 Thread 0x00000000556e9000 1681       4       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOMParser::characters (110 bytes)
+Event: 1.673 Thread 0x0000000055712000 1716   !   3       sun.misc.URLClassPath$JarLoader::getResource (353 bytes)
+Event: 1.675 Thread 0x0000000055712000 nmethod 1716 0x0000000002e66210 code [0x0000000002e66620, 0x0000000002e684c8]
+Event: 1.678 Thread 0x00000000556e9000 nmethod 1681 0x0000000002e61dd0 code [0x0000000002e61f60, 0x0000000002e62c08]
+Event: 1.678 Thread 0x00000000556e9000 1550       4       com.sun.org.apache.xerces.internal.impl.xs.opti.SchemaDOM::processAttValue (68 bytes)
+Event: 1.680 Thread 0x0000000055712000 1717       3       java.util.regex.Matcher::matches (10 bytes)
+Event: 1.680 Thread 0x0000000055712000 nmethod 1717 0x0000000002e619d0 code [0x0000000002e61b40, 0x0000000002e61d48]
+Event: 1.680 Thread 0x0000000055712000 1718       3       java.util.Stack::push (7 bytes)
+Event: 1.680 Thread 0x0000000055712000 nmethod 1718 0x0000000002e61590 code [0x0000000002e61700, 0x0000000002e61908]
+Event: 1.681 Thread 0x00000000556e9000 nmethod 1550 0x0000000002e6a250 code [0x0000000002e6a3a0, 0x0000000002e6a6d8]
+Event: 1.681 Thread 0x00000000556e9000 1602       4       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::skipString (122 bytes)
+Event: 1.681 Thread 0x0000000055712000 1719       1       org.springframework.beans.factory.support.AbstractBeanDefinition::getPropertyValues (5 bytes)
+Event: 1.681 Thread 0x0000000055712000 nmethod 1719 0x0000000002e69f90 code [0x0000000002e6a0e0, 0x0000000002e6a1f0]
+Event: 1.686 Thread 0x0000000055712000 1720       3       java.util.LinkedList::add (7 bytes)
+Event: 1.686 Thread 0x0000000055712000 nmethod 1720 0x0000000002e64610 code [0x0000000002e64780, 0x0000000002e64988]
+Event: 1.686 Thread 0x0000000055712000 1721       3       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::getNodeObject (510 bytes)
+Event: 1.687 Thread 0x00000000556e9000 nmethod 1602 0x0000000002e63610 code [0x0000000002e637a0, 0x0000000002e63dc8]
+Event: 1.687 Thread 0x00000000556e9000 1603       4       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::skipSpaces (350 bytes)
+Event: 1.688 Thread 0x0000000055712000 nmethod 1721 0x0000000002e6e0d0 code [0x0000000002e6e580, 0x0000000002e710a8]
+Event: 1.688 Thread 0x0000000055712000 1727       3       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::getPrevSibling (106 bytes)
+Event: 1.689 Thread 0x0000000055712000 nmethod 1727 0x0000000002e6d090 code [0x0000000002e6d260, 0x0000000002e6d970]
+Event: 1.689 Thread 0x0000000055712000 1726       3       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::getPrevSibling (7 bytes)
+Event: 1.689 Thread 0x0000000055712000 nmethod 1726 0x0000000002e42450 code [0x0000000002e425c0, 0x0000000002e42768]
+Event: 1.689 Thread 0x0000000055712000 1722       3       com.sun.org.apache.xerces.internal.dom.NodeImpl::isOwned (27 bytes)
+Event: 1.689 Thread 0x0000000055712000 nmethod 1722 0x0000000002e6cd10 code [0x0000000002e6ce60, 0x0000000002e6d010]
+Event: 1.689 Thread 0x0000000055712000 1723       3       com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl::getLastChild (7 bytes)
+Event: 1.689 Thread 0x0000000055712000 nmethod 1723 0x0000000002e6c950 code [0x0000000002e6cac0, 0x0000000002e6cc68]
+Event: 1.689 Thread 0x0000000055712000 1728       1       com.sun.org.apache.xerces.internal.dom.AttrImpl::getNodeType (2 bytes)
+Event: 1.689 Thread 0x0000000055712000 nmethod 1728 0x0000000002e6c690 code [0x0000000002e6c7e0, 0x0000000002e6c8f0]
+Event: 1.689 Thread 0x0000000055712000 1724       1       org.springframework.beans.factory.support.AbstractBeanDefinition::getMethodOverrides (5 bytes)
+Event: 1.689 Thread 0x0000000055712000 nmethod 1724 0x0000000002e6c3d0 code [0x0000000002e6c520, 0x0000000002e6c630]
+Event: 1.690 Thread 0x0000000055712000 1729       3       org.springframework.util.StringUtils::hasText (20 bytes)
+Event: 1.690 Thread 0x0000000055712000 nmethod 1729 0x0000000002e6bcd0 code [0x0000000002e6be60, 0x0000000002e6c288]
+Event: 1.691 Thread 0x0000000055712000 1730       1       org.springframework.beans.factory.support.AbstractBeanDefinitionReader::getRegistry (5 bytes)
+Event: 1.691 Thread 0x0000000055712000 nmethod 1730 0x0000000002e6ba10 code [0x0000000002e6bb60, 0x0000000002e6bc70]
+Event: 1.693 Thread 0x0000000055712000 1731       3       com.sun.org.apache.xerces.internal.dom.ParentNode::nodeListGetLength (130 bytes)
+Event: 1.693 Thread 0x00000000556e9000 nmethod 1603 0x0000000002e6ae90 code [0x0000000002e6b020, 0x0000000002e6b510]
+Event: 1.693 Thread 0x00000000556e9000 1654 %     4       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanData @ 721 (1108 bytes)
+Event: 1.694 Thread 0x0000000055712000 nmethod 1731 0x0000000002e75450 code [0x0000000002e755e0, 0x0000000002e75bc8]
+Event: 1.694 Thread 0x0000000055712000 1732       3       com.sun.org.apache.xerces.internal.dom.ParentNode::lastChild (19 bytes)
+Event: 1.694 Thread 0x0000000055712000 nmethod 1732 0x0000000002e6aa90 code [0x0000000002e6ac00, 0x0000000002e6add0]
+Event: 1.696 Thread 0x0000000055712000 1733       3       com.sun.org.apache.xerces.internal.dom.NodeImpl::hasStringValue (29 bytes)
+Event: 1.696 Thread 0x0000000055712000 nmethod 1733 0x0000000002e750d0 code [0x0000000002e75220, 0x0000000002e753d0]
+Event: 1.696 Thread 0x0000000055712000 1734       3       com.sun.org.apache.xerces.internal.dom.NodeImpl::ownerDocument (23 bytes)
+Event: 1.696 Thread 0x0000000055712000 nmethod 1734 0x0000000002e749d0 code [0x0000000002e74b60, 0x0000000002e74fc8]
+Event: 1.699 Thread 0x0000000055712000 1735       3       java.lang.Class$MethodArray::removeByNameAndDescriptor (42 bytes)
+Event: 1.699 Thread 0x0000000055712000 nmethod 1735 0x0000000002e72e90 code [0x0000000002e73020, 0x0000000002e73358]
+Event: 1.707 Thread 0x0000000055712000 1736       3       java.util.ArrayList$Itr::next (66 bytes)
+Event: 1.707 Thread 0x0000000055712000 nmethod 1736 0x0000000002e7e690 code [0x0000000002e7e840, 0x0000000002e7ece8]
+Event: 1.707 Thread 0x000000005570f000 nmethod 1441 0x0000000002e7ef50 code [0x0000000002e7f400, 0x0000000002e86498]
+Event: 1.708 Thread 0x000000005570f000 1685   !   4       com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver::next (2346 bytes)
+Event: 1.708 Thread 0x0000000055712000 1737       3       java.io.FileOutputStream::write (12 bytes)
+Event: 1.708 Thread 0x0000000055712000 nmethod 1737 0x0000000002e742d0 code [0x0000000002e74440, 0x0000000002e745c8]
+Event: 1.708 Thread 0x0000000055712000 1739       3       com.sun.org.apache.xerces.internal.dom.NamedNodeMapImpl::findNamePoint (108 bytes)
+Event: 1.709 Thread 0x0000000055712000 nmethod 1739 0x0000000002e736d0 code [0x0000000002e738a0, 0x0000000002e74018]
+Event: 1.709 Thread 0x0000000055712000 1740       3       java.util.LinkedHashSet::<init> (9 bytes)
+Event: 1.709 Thread 0x0000000055712000 nmethod 1740 0x0000000002e7de90 code [0x0000000002e7e040, 0x0000000002e7e448]
+Event: 1.709 Thread 0x0000000055712000 1741       3       org.apache.log4j.WriterAppender::append (14 bytes)
+Event: 1.709 Thread 0x0000000055712000 nmethod 1741 0x0000000002e7d950 code [0x0000000002e7dac0, 0x0000000002e7ddd8]
+Event: 1.710 Thread 0x0000000055712000 1742       3       org.apache.log4j.WriterAppender::subAppend (96 bytes)
+Event: 1.710 Thread 0x0000000055712000 nmethod 1742 0x0000000002e7c690 code [0x0000000002e7c8c0, 0x0000000002e7d3c8]
+Event: 1.710 Thread 0x0000000055712000 1744       3       org.apache.log4j.PatternLayout::format (79 bytes)
+Event: 1.711 Thread 0x0000000055712000 nmethod 1744 0x0000000002e7b350 code [0x0000000002e7b540, 0x0000000002e7c188]
+Event: 1.711 Thread 0x0000000055712000 1743       3       org.apache.log4j.AppenderSkeleton::isActive (20 bytes)
+Event: 1.711 Thread 0x0000000055712000 nmethod 1743 0x0000000002e7af90 code [0x0000000002e7b0e0, 0x0000000002e7b2d0]
+Event: 1.711 Thread 0x0000000055712000 1745       3       org.springframework.util.ObjectUtils::nullSafeHashCode (183 bytes)
+Event: 1.712 Thread 0x0000000055712000 nmethod 1745 0x0000000002e79250 code [0x0000000002e79520, 0x0000000002e7ace8]
+Event: 1.718 Thread 0x0000000055712000 1746       3       com.sun.org.apache.xerces.internal.dom.ParentNode::item (6 bytes)
+Event: 1.718 Thread 0x0000000055712000 nmethod 1746 0x0000000002e78ed0 code [0x0000000002e79040, 0x0000000002e791c8]
+Event: 1.718 Thread 0x0000000055712000 1747       3       com.sun.org.apache.xerces.internal.dom.ParentNode::nodeListItem (226 bytes)
+Event: 1.719 Thread 0x0000000055712000 nmethod 1747 0x0000000002e779d0 code [0x0000000002e77be0, 0x0000000002e78a48]
+Event: 1.724 Thread 0x00000000556e9000 nmethod 1654% 0x0000000002e8e9d0 code [0x0000000002e8eba0, 0x0000000002e8fdb8]
+Event: 1.724 Thread 0x00000000556e9000 1493       4       java.io.DataOutputStream::writeShort (35 bytes)
+Event: 1.724 Thread 0x0000000055712000 1748       3       sun.reflect.NativeConstructorAccessorImpl::newInstance (89 bytes)
+Event: 1.725 Thread 0x0000000055712000 nmethod 1748 0x0000000002e8cc50 code [0x0000000002e8cec0, 0x0000000002e8e1b8]
+Event: 1.751 Thread 0x00000000556e9000 nmethod 1493 0x0000000002e94210 code [0x0000000002e943e0, 0x0000000002e96298]
+Event: 1.751 Thread 0x00000000556e9000 1725       4       java.util.regex.Pattern$Node::match (27 bytes)
+Event: 1.752 Thread 0x00000000556e9000 nmethod 1725 0x0000000002e75d90 code [0x0000000002e75ec0, 0x0000000002e75f58]
+Event: 1.752 Thread 0x0000000055712000 1750       3       com.sun.org.apache.xerces.internal.dom.ElementNSImpl::getLocalName (16 bytes)
+Event: 1.753 Thread 0x0000000055712000 nmethod 1750 0x0000000002e8c690 code [0x0000000002e8c800, 0x0000000002e8cb88]
+Event: 1.755 Thread 0x0000000055712000 1751       3       com.sun.org.apache.xerces.internal.dom.ElementImpl::getNodeName (16 bytes)
+Event: 1.755 Thread 0x0000000055712000 nmethod 1751 0x0000000002e8c090 code [0x0000000002e8c200, 0x0000000002e8c588]
+Event: 1.756 Thread 0x0000000055712000 1752       3       java.lang.AbstractStringBuilder::append (50 bytes)
+Event: 1.757 Thread 0x0000000055712000 nmethod 1752 0x0000000002e76a10 code [0x0000000002e76be0, 0x0000000002e77318]
+Event: 1.757 Thread 0x0000000055712000 1753       3       org.springframework.core.AttributeAccessorSupport::<init> (17 bytes)
+Event: 1.757 Thread 0x0000000055712000 nmethod 1753 0x0000000002e76390 code [0x0000000002e76540, 0x0000000002e76888]
+Event: 1.757 Thread 0x0000000055712000 1754       3       com.sun.org.apache.xerces.internal.dom.ElementImpl::getAttribute (52 bytes)
+Event: 1.757 Thread 0x0000000055712000 nmethod 1754 0x0000000002e93450 code [0x0000000002e93620, 0x0000000002e93fd8]
+Event: 1.758 Thread 0x0000000055712000 1755       1       org.springframework.context.support.GenericApplicationContext::getBeanFactory (5 bytes)
+Event: 1.758 Thread 0x0000000055712000 nmethod 1755 0x0000000002e93190 code [0x0000000002e932e0, 0x0000000002e933f0]
+Event: 1.761 Thread 0x00000000556e9000 1756   !   4       java.net.URL::<init> (543 bytes)
+Event: 1.762 Thread 0x0000000055712000 1757       3       java.util.regex.Pattern$TreeInfo::reset (21 bytes)
+Event: 1.763 Thread 0x0000000055712000 nmethod 1757 0x0000000002e92e50 code [0x0000000002e92fa0, 0x0000000002e93110]
+Event: 1.765 Thread 0x0000000055712000 1759       3       java.lang.StringBuilder::append (8 bytes)
+Event: 1.765 Thread 0x0000000055712000 nmethod 1759 0x0000000002e92ad0 code [0x0000000002e92c40, 0x0000000002e92dc8]
+Event: 1.766 Thread 0x0000000055712000 1760       3       sun.reflect.ConstructorAccessorImpl::<init> (5 bytes)
+Event: 1.767 Thread 0x0000000055712000 nmethod 1760 0x0000000002e92690 code [0x0000000002e92800, 0x0000000002e92a10]
+Event: 1.774 Thread 0x0000000055712000 1762       1       java.security.PermissionCollection::isReadOnly (5 bytes)
+Event: 1.774 Thread 0x0000000055712000 nmethod 1762 0x0000000002e923d0 code [0x0000000002e92520, 0x0000000002e92630]
+Event: 1.785 Thread 0x00000000556e9000 nmethod 1756 0x0000000002e996d0 code [0x0000000002e99920, 0x0000000002e9a7d0]
+Event: 1.785 Thread 0x00000000556e9000 1761       4       java.lang.String::lastIndexOf (151 bytes)
+Event: 1.789 Thread 0x00000000556e9000 nmethod 1761 0x0000000002e97510 code [0x0000000002e97660, 0x0000000002e97998]
+Event: 1.789 Thread 0x00000000556e9000 1758       4       java.util.ArrayList$Itr::hasNext (20 bytes)
+Event: 1.790 Thread 0x00000000556e9000 nmethod 1758 0x0000000002e76110 code [0x0000000002e76240, 0x0000000002e762b8]
+Event: 1.790 Thread 0x0000000055712000 1763       3       java.util.LinkedList::checkPositionIndex (22 bytes)
+Event: 1.790 Thread 0x0000000055712000 nmethod 1763 0x0000000002e91050 code [0x0000000002e91260, 0x0000000002e91e18]
+Event: 1.790 Thread 0x0000000055712000 1765       3       java.util.concurrent.ConcurrentHashMap::containsKey (14 bytes)
+Event: 1.790 Thread 0x0000000055712000 nmethod 1765 0x0000000002e90c10 code [0x0000000002e90d80, 0x0000000002e90f68]
+Event: 1.790 Thread 0x0000000055712000 1764       3       java.util.LinkedList::isPositionIndex (18 bytes)
+Event: 1.791 Thread 0x0000000055712000 nmethod 1764 0x0000000002e97090 code [0x0000000002e971e0, 0x0000000002e973d0]
+Event: 1.794 Thread 0x00000000556e9000 1766       4       java.util.zip.Inflater::ensureOpen (47 bytes)
+Event: 1.795 Thread 0x00000000556e9000 nmethod 1766 0x0000000002e97f50 code [0x0000000002e98080, 0x0000000002e98118]
+Event: 1.796 Thread 0x00000000556e9000 1767       4       java.net.URLStreamHandler::parseURL (1193 bytes)
+Event: 1.801 Thread 0x0000000055712000 1769       3       java.util.LinkedHashMap$LinkedKeySet::iterator (12 bytes)
+Event: 1.801 Thread 0x0000000055712000 nmethod 1769 0x0000000002e990d0 code [0x0000000002e99240, 0x0000000002e99550]
+Event: 1.801 Thread 0x0000000055712000 1770       3       java.util.LinkedHashMap$LinkedKeyIterator::<init> (11 bytes)
+Event: 1.801 Thread 0x0000000055712000 nmethod 1770 0x0000000002e98bd0 code [0x0000000002e98d40, 0x0000000002e98fb0]
+Event: 1.801 Thread 0x0000000055712000 1771       1       org.springframework.beans.PropertyValue::getValue (5 bytes)
+Event: 1.801 Thread 0x0000000055712000 nmethod 1771 0x0000000002e97c90 code [0x0000000002e97de0, 0x0000000002e97ef0]
+Event: 1.806 Thread 0x0000000055712000 1772       1       java.util.LinkedList::size (5 bytes)
+Event: 1.806 Thread 0x0000000055712000 nmethod 1772 0x0000000002e98910 code [0x0000000002e98a60, 0x0000000002e98b70]
+Event: 1.808 Thread 0x0000000055712000 1773       3       org.springframework.beans.factory.support.AbstractBeanDefinition::hasBeanClass (8 bytes)
+Event: 1.808 Thread 0x0000000055712000 nmethod 1773 0x0000000002e984d0 code [0x0000000002e98620, 0x0000000002e98870]
+Event: 1.809 Thread 0x0000000055712000 1774       3       java.util.jar.Attributes::putValue (17 bytes)
+Event: 1.809 Thread 0x0000000055712000 nmethod 1774 0x0000000002e9c6d0 code [0x0000000002e9c860, 0x0000000002e9cc58]
+Event: 1.809 Thread 0x0000000055712000 1775       3       java.util.jar.Attributes::put (18 bytes)
+Event: 1.809 Thread 0x0000000055712000 nmethod 1775 0x0000000002e9c050 code [0x0000000002e9c1c0, 0x0000000002e9c5a8]
+Event: 1.813 Thread 0x0000000055712000 1776       1       org.springframework.beans.factory.support.AbstractBeanDefinition::isSynthetic (5 bytes)
+Event: 1.813 Thread 0x0000000055712000 nmethod 1776 0x0000000002e981d0 code [0x0000000002e98320, 0x0000000002e98430]
+Event: 1.813 Thread 0x0000000055712000 1777       3       java.util.LinkedHashMap::entrySet (27 bytes)
+Event: 1.814 Thread 0x0000000055712000 nmethod 1777 0x0000000002e9b990 code [0x0000000002e9bb20, 0x0000000002e9beb0]
+Event: 1.814 Thread 0x0000000055712000 1778       3       java.util.LinkedHashMap$LinkedEntrySet::iterator (12 bytes)
+Event: 1.814 Thread 0x0000000055712000 nmethod 1778 0x0000000002e9cdd0 code [0x0000000002e9cf40, 0x0000000002e9d250]
+
+GC Heap History (8 events):
+Event: 0.617 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 16384K [0x00000000eb100000, 0x00000000ec600000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000eb100000,0x00000000ec100000,0x00000000ec100000)
+  from space 2560K, 0% used [0x00000000ec380000,0x00000000ec380000,0x00000000ec600000)
+  to   space 2560K, 0% used [0x00000000ec100000,0x00000000ec100000,0x00000000ec380000)
+ ParOldGen       total 44032K, used 0K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 0% used [0x00000000c1200000,0x00000000c1200000,0x00000000c3d00000)
+ Metaspace       used 8391K, capacity 8526K, committed 8704K, reserved 1056768K
+  class space    used 905K, capacity 921K, committed 1024K, reserved 1048576K
+Event: 0.621 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 2550K [0x00000000eb100000, 0x00000000ec600000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000eb100000,0x00000000eb100000,0x00000000ec100000)
+  from space 2560K, 99% used [0x00000000ec100000,0x00000000ec37d8a0,0x00000000ec380000)
+  to   space 2560K, 0% used [0x00000000ec380000,0x00000000ec380000,0x00000000ec600000)
+ ParOldGen       total 44032K, used 874K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 1% used [0x00000000c1200000,0x00000000c12da890,0x00000000c3d00000)
+ Metaspace       used 8391K, capacity 8526K, committed 8704K, reserved 1056768K
+  class space    used 905K, capacity 921K, committed 1024K, reserved 1048576K
+}
+Event: 0.951 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 18944K, used 18934K [0x00000000eb100000, 0x00000000ec600000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000eb100000,0x00000000ec100000,0x00000000ec100000)
+  from space 2560K, 99% used [0x00000000ec100000,0x00000000ec37d8a0,0x00000000ec380000)
+  to   space 2560K, 0% used [0x00000000ec380000,0x00000000ec380000,0x00000000ec600000)
+ ParOldGen       total 44032K, used 874K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 1% used [0x00000000c1200000,0x00000000c12da890,0x00000000c3d00000)
+ Metaspace       used 13288K, capacity 13506K, committed 13568K, reserved 1060864K
+  class space    used 1446K, capacity 1509K, committed 1536K, reserved 1048576K
+Event: 0.956 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 18944K, used 2537K [0x00000000eb100000, 0x00000000ed600000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000eb100000,0x00000000eb100000,0x00000000ec100000)
+  from space 2560K, 99% used [0x00000000ec380000,0x00000000ec5fa630,0x00000000ec600000)
+  to   space 2560K, 0% used [0x00000000ec100000,0x00000000ec100000,0x00000000ec380000)
+ ParOldGen       total 44032K, used 2977K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 6% used [0x00000000c1200000,0x00000000c14e87e8,0x00000000c3d00000)
+ Metaspace       used 13288K, capacity 13506K, committed 13568K, reserved 1060864K
+  class space    used 1446K, capacity 1509K, committed 1536K, reserved 1048576K
+}
+Event: 1.475 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 18944K, used 18921K [0x00000000eb100000, 0x00000000ed600000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000eb100000,0x00000000ec100000,0x00000000ec100000)
+  from space 2560K, 99% used [0x00000000ec380000,0x00000000ec5fa630,0x00000000ec600000)
+  to   space 2560K, 0% used [0x00000000ec100000,0x00000000ec100000,0x00000000ec380000)
+ ParOldGen       total 44032K, used 2977K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 6% used [0x00000000c1200000,0x00000000c14e87e8,0x00000000c3d00000)
+ Metaspace       used 17991K, capacity 18216K, committed 18432K, reserved 1064960K
+  class space    used 1934K, capacity 2032K, committed 2048K, reserved 1048576K
+Event: 1.481 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 18944K, used 2537K [0x00000000eb100000, 0x00000000ed600000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000eb100000,0x00000000eb100000,0x00000000ec100000)
+  from space 2560K, 99% used [0x00000000ec100000,0x00000000ec37a650,0x00000000ec380000)
+  to   space 2560K, 0% used [0x00000000ed380000,0x00000000ed380000,0x00000000ed600000)
+ ParOldGen       total 44032K, used 5724K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 13% used [0x00000000c1200000,0x00000000c1797190,0x00000000c3d00000)
+ Metaspace       used 17991K, capacity 18216K, committed 18432K, reserved 1064960K
+  class space    used 1934K, capacity 2032K, committed 2048K, reserved 1048576K
+}
+Event: 1.736 GC heap before
+{Heap before GC invocations=4 (full 0):
+ PSYoungGen      total 18944K, used 18921K [0x00000000eb100000, 0x00000000ed600000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000eb100000,0x00000000ec100000,0x00000000ec100000)
+  from space 2560K, 99% used [0x00000000ec100000,0x00000000ec37a650,0x00000000ec380000)
+  to   space 2560K, 0% used [0x00000000ed380000,0x00000000ed380000,0x00000000ed600000)
+ ParOldGen       total 44032K, used 5724K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 13% used [0x00000000c1200000,0x00000000c1797190,0x00000000c3d00000)
+ Metaspace       used 19216K, capacity 19534K, committed 19968K, reserved 1067008K
+  class space    used 2086K, capacity 2193K, committed 2304K, reserved 1048576K
+Event: 1.750 GC heap after
+Heap after GC invocations=4 (full 0):
+ PSYoungGen      total 35328K, used 2544K [0x00000000eb100000, 0x00000000ed600000, 0x0000000100000000)
+  eden space 32768K, 0% used [0x00000000eb100000,0x00000000eb100000,0x00000000ed100000)
+  from space 2560K, 99% used [0x00000000ed380000,0x00000000ed5fc030,0x00000000ed600000)
+  to   space 2560K, 0% used [0x00000000ed100000,0x00000000ed100000,0x00000000ed380000)
+ ParOldGen       total 44032K, used 8091K [0x00000000c1200000, 0x00000000c3d00000, 0x00000000eb100000)
+  object space 44032K, 18% used [0x00000000c1200000,0x00000000c19e6f18,0x00000000c3d00000)
+ Metaspace       used 19216K, capacity 19534K, committed 19968K, reserved 1067008K
+  class space    used 2086K, capacity 2193K, committed 2304K, reserved 1048576K
+}
+
+Deoptimization events (18 events):
+Event: 0.131 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000298bc28 method=java.lang.String.hashCode()I @ 14
+Event: 0.160 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000029b75c4 method=java.lang.String.indexOf(II)I @ 49
+Event: 0.561 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002aa3eec method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 129
+Event: 0.714 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002a6caf8 method=java.io.WinNTFileSystem.normalize(Ljava/lang/String;)Ljava/lang/String; @ 128
+Event: 0.736 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000029ec438 method=java.lang.String.indexOf([CII[CIII)I @ 3
+Event: 0.853 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002b6637c method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 236
+Event: 1.003 Thread 0x00000000023ae800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000002b834b8 method=java.util.regex.Pattern$Start.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 44
+Event: 1.050 Thread 0x00000000023ae800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x0000000002b8341c method=java.util.regex.Pattern$SliceI.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 21
+Event: 1.080 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002b4c4ac method=sun.nio.cs.UTF_8$Decoder.decode([BII[C)I @ 30
+Event: 1.080 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002c652b8 method=java.lang.CharacterData.of(I)Ljava/lang/CharacterData; @ 4
+Event: 1.091 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002c27e90 method=java.lang.String.indexOf([CII[CIII)I @ 27
+Event: 1.148 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002c9c3e0 method=java.util.Arrays.equals([B[B)Z @ 12
+Event: 1.337 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002d17e28 method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.peekChar()I @ 14
+Event: 1.465 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002c589fc method=java.util.regex.Matcher.reset()Ljava/util/regex/Matcher; @ 47
+Event: 1.627 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002d6e23c method=com.sun.org.apache.xerces.internal.utils.XMLLimitAnalyzer.addValue(ILjava/lang/String;I)V @ 78
+Event: 1.633 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002d94b50 method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.scanQName(Lcom/sun/org/apache/xerces/internal/xni/QName;Lcom/sun/org/apache/xerces/internal/impl/XMLScanner$NameType
+Event: 1.756 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002a5c704 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 1.756 Thread 0x00000000023ae800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002a578c4 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (41 events):
+Event: 0.024 Thread 0x00000000023ae800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000eb107cb0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\
+Event: 0.024 Thread 0x00000000023ae800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000eb107f98) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 4020
+Event: 0.277 Thread 0x00000000023ae800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb3f3e80) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.277 Thread 0x00000000023ae800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb3f4278) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.277 Thread 0x00000000023ae800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb3f6788) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.277 Thread 0x00000000023ae800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb3f6b80) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.277 Thread 0x00000000023ae800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb3f7b30) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.277 Thread 0x00000000023ae800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb3f7f28) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.425 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/ConsoleAppenderBeanInfo> (0x00000000eb887528) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.425 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/WriterAppenderBeanInfo> (0x00000000eb895e58) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.426 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/AppenderSkeletonBeanInfo> (0x00000000eb8a4a60) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.426 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/spi/ComponentBaseBeanInfo> (0x00000000eb8b3780) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.426 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectBeanInfo> (0x00000000eb8b9a08) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.427 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x00000000eb8bfe18) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.428 Thread 0x00000000023ae800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eb8c1aa0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 0.429 Thread 0x00000000023ae800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eb8c4dd0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 0.429 Thread 0x00000000023ae800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eb8c7208) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 0.450 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/spi/ComponentBaseCustomizer> (0x00000000eb8d8af0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.451 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/AppenderSkeletonCustomizer> (0x00000000eb8eab68) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.456 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/WriterAppenderCustomizer> (0x00000000eb90ff08) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.457 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/ConsoleAppenderCustomizer> (0x00000000eb92c360) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.469 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/PatternLayoutBeanInfo> (0x00000000eb9d2af8) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.470 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/LayoutBeanInfo> (0x00000000eb9dfcd0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.471 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/LayoutCustomizer> (0x00000000eb9ed200) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.473 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/PatternLayoutCustomizer> (0x00000000eba03d70) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.483 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/rolling/RollingFileAppenderBeanInfo> (0x00000000eba41e70) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.484 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/FileAppenderBeanInfo> (0x00000000eba502f8) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.485 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/FileAppenderCustomizer> (0x00000000eba5eb38) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.486 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/rolling/RollingFileAppenderCustomizer> (0x00000000eba7ce50) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.493 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/rolling/FixedWindowRollingPolicyBeanInfo> (0x00000000ebac6218) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.493 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/rolling/RollingPolicyBaseBeanInfo> (0x00000000ebad65c0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.493 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/rolling/RollingPolicyBaseCustomizer> (0x00000000ebae7410) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.494 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/rolling/FixedWindowRollingPolicyCustomizer> (0x00000000ebb01b30) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.497 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/rolling/SizeBasedTriggeringPolicyBeanInfo> (0x00000000ebb2b428) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.497 Thread 0x00000000023ae800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/rolling/SizeBasedTriggeringPolicyCustomizer> (0x00000000ebb3d790) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.724 Thread 0x00000000023ae800 Exception <a 'java/io/FileNotFoundException'> (0x00000000eb7d21c0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 0.991 Thread 0x00000000023ae800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000eb262680) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.992 Thread 0x00000000023ae800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000eb270190) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 1.148 Thread 0x00000000023ae800 Implicit null exception at 0x0000000002c9c298 to 0x0000000002c9c3cd
+Event: 1.756 Thread 0x00000000023ae800 Implicit null exception at 0x0000000002a5c346 to 0x0000000002a5c6e9
+Event: 1.756 Thread 0x00000000023ae800 Implicit null exception at 0x0000000002a57504 to 0x0000000002a578ad
+
+Events (250 events):
+Event: 1.757 loading class org/springframework/security/authentication/dao/DaoAuthenticationProvider
+Event: 1.757 loading class org/springframework/security/authentication/dao/DaoAuthenticationProvider done
+Event: 1.758 loading class org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider
+Event: 1.758 loading class org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider done
+Event: 1.759 loading class org/springframework/security/config/authentication/PasswordEncoderParser
+Event: 1.759 loading class org/springframework/security/config/authentication/PasswordEncoderParser done
+Event: 1.759 loading class org/springframework/security/authentication/encoding/PlaintextPasswordEncoder
+Event: 1.759 loading class org/springframework/security/authentication/encoding/PlaintextPasswordEncoder done
+Event: 1.760 loading class org/springframework/security/authentication/encoding/BasePasswordEncoder
+Event: 1.760 loading class org/springframework/security/authentication/encoding/BasePasswordEncoder done
+Event: 1.760 loading class org/springframework/security/authentication/encoding/PasswordEncoder
+Event: 1.760 loading class org/springframework/security/authentication/encoding/PasswordEncoder done
+Event: 1.760 loading class org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder
+Event: 1.760 loading class org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder done
+Event: 1.760 loading class org/springframework/security/crypto/password/PasswordEncoder
+Event: 1.760 loading class org/springframework/security/crypto/password/PasswordEncoder done
+Event: 1.760 loading class org/springframework/security/authentication/encoding/ShaPasswordEncoder
+Event: 1.760 loading class org/springframework/security/authentication/encoding/ShaPasswordEncoder done
+Event: 1.761 loading class org/springframework/security/authentication/encoding/MessageDigestPasswordEncoder
+Event: 1.761 loading class org/springframework/security/authentication/encoding/MessageDigestPasswordEncoder done
+Event: 1.761 loading class org/springframework/security/authentication/encoding/BaseDigestPasswordEncoder
+Event: 1.761 loading class org/springframework/security/authentication/encoding/BaseDigestPasswordEncoder done
+Event: 1.761 loading class org/springframework/security/authentication/encoding/Md4PasswordEncoder
+Event: 1.761 loading class org/springframework/security/authentication/encoding/Md4PasswordEncoder done
+Event: 1.761 loading class org/springframework/security/authentication/encoding/Md5PasswordEncoder
+Event: 1.761 loading class org/springframework/security/authentication/encoding/Md5PasswordEncoder done
+Event: 1.762 loading class org/springframework/security/authentication/encoding/LdapShaPasswordEncoder
+Event: 1.762 loading class org/springframework/security/authentication/encoding/LdapShaPasswordEncoder done
+Event: 1.763 loading class org/springframework/security/authentication/DefaultAuthenticationEventPublisher
+Event: 1.763 loading class org/springframework/security/authentication/DefaultAuthenticationEventPublisher done
+Event: 1.763 loading class org/springframework/security/authentication/AuthenticationEventPublisher
+Event: 1.763 loading class org/springframework/security/authentication/AuthenticationEventPublisher done
+Event: 1.764 loading class sun/util/locale/provider/TimeZoneNameUtility
+Event: 1.764 loading class sun/util/locale/provider/TimeZoneNameUtility done
+Event: 1.765 loading class sun/util/locale/provider/TimeZoneNameProviderImpl
+Event: 1.765 loading class sun/util/locale/provider/TimeZoneNameProviderImpl done
+Event: 1.765 loading class sun/util/locale/provider/TimeZoneNameUtility$TimeZoneNameGetter
+Event: 1.765 loading class sun/util/locale/provider/TimeZoneNameUtility$TimeZoneNameGetter done
+Event: 1.765 loading class sun/util/resources/TimeZoneNames
+Event: 1.766 loading class sun/util/resources/TimeZoneNamesBundle
+Event: 1.766 loading class sun/util/resources/TimeZoneNamesBundle done
+Event: 1.766 loading class sun/util/resources/TimeZoneNames done
+Event: 1.766 loading class sun/util/resources/en/TimeZoneNames_en
+Event: 1.766 loading class sun/util/resources/en/TimeZoneNames_en done
+Event: 1.769 loading class org/springframework/web/context/support/WebApplicationContextUtils
+Event: 1.769 loading class org/springframework/web/context/support/WebApplicationContextUtils done
+Event: 1.770 loading class org/springframework/web/context/support/ServletContextPropertySource
+Event: 1.770 loading class org/springframework/web/context/support/ServletContextPropertySource done
+Event: 1.770 loading class org/springframework/web/context/support/ServletConfigPropertySource
+Event: 1.770 loading class org/springframework/web/context/support/ServletConfigPropertySource done
+Event: 1.771 loading class org/springframework/beans/factory/config/Scope
+Event: 1.771 loading class org/springframework/beans/factory/config/Scope done
+Event: 1.771 loading class org/springframework/web/context/request/RequestContextHolder
+Event: 1.771 loading class org/springframework/web/context/request/RequestContextHolder done
+Event: 1.771 loading class javax/faces/context/FacesContext
+Event: 1.772 loading class javax/faces/context/FacesContext done
+Event: 1.772 loading class javax/faces/context$FacesContext
+Event: 1.772 loading class javax/faces/context$FacesContext done
+Event: 1.772 loading class org/springframework/context/expression/StandardBeanExpressionResolver
+Event: 1.772 loading class org/springframework/context/expression/StandardBeanExpressionResolver done
+Event: 1.773 loading class org/springframework/expression/ParserContext
+Event: 1.773 loading class org/springframework/expression/ParserContext done
+Event: 1.774 loading class org/springframework/expression/ExpressionParser
+Event: 1.774 loading class org/springframework/expression/ExpressionParser done
+Event: 1.774 loading class org/springframework/expression/PropertyAccessor
+Event: 1.774 loading class org/springframework/expression/PropertyAccessor done
+Event: 1.774 loading class org/springframework/expression/BeanResolver
+Event: 1.774 loading class org/springframework/expression/BeanResolver done
+Event: 1.775 loading class org/springframework/expression/TypeLocator
+Event: 1.775 loading class org/springframework/expression/TypeLocator done
+Event: 1.775 loading class org/springframework/expression/TypeConverter
+Event: 1.775 loading class org/springframework/expression/TypeConverter done
+Event: 1.775 loading class org/springframework/expression/EvaluationContext
+Event: 1.775 loading class org/springframework/expression/EvaluationContext done
+Event: 1.775 loading class org/springframework/beans/factory/BeanExpressionException
+Event: 1.775 loading class org/springframework/beans/factory/BeanExpressionException done
+Event: 1.776 loading class org/springframework/context/expression/StandardBeanExpressionResolver$1
+Event: 1.776 loading class org/springframework/context/expression/StandardBeanExpressionResolver$1 done
+Event: 1.776 loading class org/springframework/expression/spel/standard/SpelExpressionParser
+Event: 1.776 loading class org/springframework/expression/spel/standard/SpelExpressionParser done
+Event: 1.776 loading class org/springframework/expression/common/TemplateAwareExpressionParser
+Event: 1.776 loading class org/springframework/expression/common/TemplateAwareExpressionParser done
+Event: 1.777 loading class org/springframework/expression/ParseException
+Event: 1.777 loading class org/springframework/expression/ParseException done
+Event: 1.777 loading class org/springframework/expression/ExpressionException
+Event: 1.777 loading class org/springframework/expression/ExpressionException done
+Event: 1.778 loading class org/springframework/expression/Expression
+Event: 1.778 loading class org/springframework/expression/Expression done
+Event: 1.778 loading class org/springframework/expression/common/TemplateAwareExpressionParser$1
+Event: 1.778 loading class org/springframework/expression/common/TemplateAwareExpressionParser$1 done
+Event: 1.778 loading class org/springframework/expression/spel/SpelParserConfiguration
+Event: 1.778 loading class org/springframework/expression/spel/SpelParserConfiguration done
+Event: 1.779 loading class org/springframework/expression/spel/SpelCompilerMode
+Event: 1.779 loading class org/springframework/expression/spel/SpelCompilerMode done
+Event: 1.779 loading class org/springframework/beans/support/ResourceEditorRegistrar
+Event: 1.779 loading class org/springframework/beans/support/ResourceEditorRegistrar done
+Event: 1.779 loading class java/beans/PropertyEditor
+Event: 1.779 loading class java/beans/PropertyEditor done
+Event: 1.780 loading class org/springframework/context/support/ApplicationContextAwareProcessor
+Event: 1.780 loading class org/springframework/context/support/ApplicationContextAwareProcessor done
+Event: 1.780 loading class org/springframework/beans/factory/config/EmbeddedValueResolver
+Event: 1.780 loading class org/springframework/beans/factory/config/EmbeddedValueResolver done
+Event: 1.780 loading class org/springframework/beans/factory/config/BeanExpressionContext
+Event: 1.780 loading class org/springframework/beans/factory/config/BeanExpressionContext done
+Event: 1.781 loading class org/springframework/context/support/ApplicationListenerDetector
+Event: 1.781 loading class org/springframework/context/support/ApplicationListenerDetector done
+Event: 1.781 loading class org/springframework/web/context/support/ServletContextAwareProcessor
+Event: 1.781 loading class org/springframework/web/context/support/ServletContextAwareProcessor done
+Event: 1.782 loading class org/springframework/web/context/request/RequestScope
+Event: 1.782 loading class org/springframework/web/context/request/RequestScope done
+Event: 1.782 loading class org/springframework/web/context/request/AbstractRequestAttributesScope
+Event: 1.782 loading class org/springframework/web/context/request/AbstractRequestAttributesScope done
+Event: 1.783 loading class org/springframework/web/context/request/SessionScope
+Event: 1.783 loading class org/springframework/web/context/request/SessionScope done
+Event: 1.783 loading class org/springframework/web/context/support/ServletContextScope
+Event: 1.783 loading class org/springframework/web/context/support/ServletContextScope done
+Event: 1.783 loading class org/springframework/web/context/support/WebApplicationContextUtils$RequestObjectFactory
+Event: 1.783 loading class org/springframework/web/context/support/WebApplicationContextUtils$RequestObjectFactory done
+Event: 1.784 loading class org/springframework/web/context/support/WebApplicationContextUtils$ResponseObjectFactory
+Event: 1.784 loading class org/springframework/web/context/support/WebApplicationContextUtils$ResponseObjectFactory done
+Event: 1.784 loading class org/springframework/web/context/support/WebApplicationContextUtils$SessionObjectFactory
+Event: 1.784 loading class org/springframework/web/context/support/WebApplicationContextUtils$SessionObjectFactory done
+Event: 1.785 loading class org/springframework/web/context/request/WebRequest
+Event: 1.785 loading class org/springframework/web/context/request/WebRequest done
+Event: 1.785 loading class org/springframework/web/context/support/WebApplicationContextUtils$WebRequestObjectFactory
+Event: 1.785 loading class org/springframework/web/context/support/WebApplicationContextUtils$WebRequestObjectFactory done
+Event: 1.785 loading class java/util/Collections$3
+Event: 1.785 loading class java/util/Collections$3 done
+Event: 1.786 loading class org/springframework/context/support/PostProcessorRegistrationDelegate
+Event: 1.786 loading class org/springframework/context/support/PostProcessorRegistrationDelegate done
+Event: 1.786 loading class org/springframework/core/ResolvableType
+Event: 1.786 loading class org/springframework/core/ResolvableType done
+Event: 1.788 loading class org/springframework/core/SerializableTypeWrapper$TypeProvider
+Event: 1.788 loading class org/springframework/core/SerializableTypeWrapper$TypeProvider done
+Event: 1.788 loading class org/springframework/core/ResolvableType$VariableResolver
+Event: 1.788 loading class org/springframework/core/ResolvableType$VariableResolver done
+Event: 1.789 loading class org/springframework/core/ResolvableType$1
+Event: 1.789 loading class org/springframework/core/ResolvableType$1 done
+Event: 1.790 loading class org/springframework/expression/common/LiteralExpression
+Event: 1.790 loading class org/springframework/expression/common/LiteralExpression done
+Event: 1.791 loading class org/springframework/expression/EvaluationException
+Event: 1.791 loading class org/springframework/expression/EvaluationException done
+Event: 1.791 loading class org/springframework/expression/spel/support/StandardEvaluationContext
+Event: 1.791 loading class org/springframework/expression/spel/support/StandardEvaluationContext done
+Event: 1.792 loading class org/springframework/expression/TypeComparator
+Event: 1.792 loading class org/springframework/expression/TypeComparator done
+Event: 1.792 loading class org/springframework/expression/OperatorOverloader
+Event: 1.792 loading class org/springframework/expression/OperatorOverloader done
+Event: 1.792 loading class org/springframework/expression/spel/support/StandardTypeComparator
+Event: 1.792 loading class org/springframework/expression/spel/support/StandardTypeComparator done
+Event: 1.793 loading class org/springframework/expression/spel/SpelEvaluationException
+Event: 1.793 loading class org/springframework/expression/spel/SpelEvaluationException done
+Event: 1.793 loading class org/springframework/expression/spel/support/StandardOperatorOverloader
+Event: 1.793 loading class org/springframework/expression/spel/support/StandardOperatorOverloader done
+Event: 1.794 loading class org/springframework/expression/TypedValue
+Event: 1.794 loading class org/springframework/expression/TypedValue done
+Event: 1.794 loading class org/springframework/context/expression/BeanExpressionContextAccessor
+Event: 1.794 loading class org/springframework/context/expression/BeanExpressionContextAccessor done
+Event: 1.794 loading class org/springframework/expression/AccessException
+Event: 1.794 loading class org/springframework/expression/AccessException done
+Event: 1.795 loading class org/springframework/expression/spel/support/ReflectivePropertyAccessor
+Event: 1.795 loading class org/springframework/expression/spel/support/ReflectivePropertyAccessor done
+Event: 1.796 loading class org/springframework/context/expression/BeanFactoryAccessor
+Event: 1.796 loading class org/springframework/context/expression/BeanFactoryAccessor done
+Event: 1.796 loading class org/springframework/context/expression/MapAccessor
+Event: 1.796 loading class org/springframework/context/expression/MapAccessor done
+Event: 1.796 loading class org/springframework/expression/spel/CompilablePropertyAccessor
+Event: 1.796 loading class org/springframework/expression/spel/CompilablePropertyAccessor done
+Event: 1.797 loading class org/springframework/context/expression/MapAccessor$MapAccessException
+Event: 1.797 loading class org/springframework/context/expression/MapAccessor$MapAccessException done
+Event: 1.797 loading class org/springframework/context/expression/EnvironmentAccessor
+Event: 1.797 loading class org/springframework/context/expression/EnvironmentAccessor done
+Event: 1.797 loading class org/springframework/context/expression/BeanFactoryResolver
+Event: 1.797 loading class org/springframework/context/expression/BeanFactoryResolver done
+Event: 1.798 loading class org/springframework/expression/spel/support/StandardTypeLocator
+Event: 1.798 loading class org/springframework/expression/spel/support/StandardTypeLocator done
+Event: 1.798 loading class org/springframework/validation/beanvalidation/OptionalValidatorFactoryBean
+Event: 1.798 loading class org/springframework/validation/beanvalidation/OptionalValidatorFactoryBean done
+Event: 1.799 loading class org/springframework/validation/beanvalidation/LocalValidatorFactoryBean
+Event: 1.799 loading class org/springframework/validation/beanvalidation/LocalValidatorFactoryBean done
+Event: 1.799 loading class javax/validation/ValidatorFactory
+Event: 1.799 loading class javax/validation/ValidatorFactory done
+Event: 1.799 loading class org/springframework/validation/beanvalidation/SpringValidatorAdapter
+Event: 1.799 loading class org/springframework/validation/beanvalidation/SpringValidatorAdapter done
+Event: 1.800 loading class org/springframework/validation/SmartValidator
+Event: 1.800 loading class org/springframework/validation/SmartValidator done
+Event: 1.800 loading class org/springframework/validation/Validator
+Event: 1.800 loading class org/springframework/validation/Validator done
+Event: 1.801 loading class org/springframework/web/servlet/view/InternalResourceViewResolver
+Event: 1.801 loading class org/springframework/web/servlet/view/InternalResourceViewResolver done
+Event: 1.801 loading class org/springframework/web/servlet/view/UrlBasedViewResolver
+Event: 1.801 loading class org/springframework/web/servlet/view/UrlBasedViewResolver done
+Event: 1.802 loading class org/springframework/web/servlet/view/AbstractCachingViewResolver
+Event: 1.802 loading class org/springframework/web/servlet/view/AbstractCachingViewResolver done
+Event: 1.802 loading class org/springframework/web/servlet/ViewResolver
+Event: 1.802 loading class org/springframework/web/servlet/ViewResolver done
+Event: 1.803 loading class org/edu/controller/AdminController
+Event: 1.803 loading class org/edu/controller/AdminController done
+Event: 1.803 loading class org/edu/controller/ControllerAdviceException
+Event: 1.803 loading class org/edu/controller/ControllerAdviceException done
+Event: 1.804 loading class org/edu/controller/HomeController
+Event: 1.804 loading class org/edu/controller/HomeController done
+Event: 1.804 loading class org/edu/controller/ReplyController
+Event: 1.804 loading class org/edu/controller/ReplyController done
+Event: 1.805 loading class org/edu/util/FileDataUtil
+Event: 1.805 loading class org/edu/util/FileDataUtil done
+Event: 1.806 loading class org/springframework/web/multipart/commons/CommonsMultipartResolver
+Event: 1.806 loading class org/springframework/web/multipart/commons/CommonsMultipartResolver done
+Event: 1.806 loading class org/springframework/web/multipart/MultipartResolver
+Event: 1.806 loading class org/springframework/web/multipart/MultipartResolver done
+Event: 1.806 loading class org/springframework/web/multipart/commons/CommonsFileUploadSupport
+Event: 1.806 loading class org/springframework/web/multipart/commons/CommonsFileUploadSupport done
+Event: 1.807 loading class org/springframework/jdbc/datasource/DriverManagerDataSource
+Event: 1.807 loading class org/springframework/jdbc/datasource/DriverManagerDataSource done
+Event: 1.807 loading class org/springframework/jdbc/datasource/AbstractDriverBasedDataSource
+Event: 1.807 loading class org/springframework/jdbc/datasource/AbstractDriverBasedDataSource done
+Event: 1.808 loading class org/springframework/jdbc/datasource/AbstractDataSource
+Event: 1.808 loading class org/springframework/jdbc/datasource/AbstractDataSource done
+Event: 1.808 loading class org/mybatis/spring/SqlSessionFactoryBean
+Event: 1.808 loading class org/mybatis/spring/SqlSessionFactoryBean done
+Event: 1.810 loading class org/mybatis/spring/SqlSessionTemplate
+Event: 1.810 loading class org/mybatis/spring/SqlSessionTemplate done
+Event: 1.810 loading class org/apache/ibatis/session/SqlSession
+Event: 1.810 loading class org/apache/ibatis/session/SqlSession done
+Event: 1.812 loading class org/edu/dao/BoardDAOImpl
+Event: 1.812 loading class org/edu/dao/BoardDAOImpl done
+Event: 1.812 loading class org/edu/dao/IF_BoardDAO
+Event: 1.812 loading class org/edu/dao/IF_BoardDAO done
+Event: 1.813 loading class org/edu/dao/MemberDAOImpl
+Event: 1.813 loading class org/edu/dao/MemberDAOImpl done
+Event: 1.813 loading class org/edu/dao/IF_MemberDAO
+Event: 1.813 loading class org/edu/dao/IF_MemberDAO done
+Event: 1.813 loading class org/edu/dao/ReplyDAOImpl
+Event: 1.813 loading class org/edu/dao/ReplyDAOImpl done
+Event: 1.814 loading class org/edu/dao/IF_ReplyDAO
+Event: 1.814 loading class org/edu/dao/IF_ReplyDAO done
+Event: 1.814 loading class org/edu/service/BoardServiceImpl
+Event: 1.814 loading class org/edu/service/BoardServiceImpl done
+Event: 1.814 loading class org/edu/service/IF_BoardService
+Event: 1.814 loading class org/edu/service/IF_BoardService done
+Event: 1.815 loading class org/edu/service/MemberServiceImpl
+Event: 1.815 loading class org/edu/service/MemberServiceImpl done
+Event: 1.815 loading class org/edu/service/ReplyServiceImpl
+Event: 1.815 loading class org/edu/service/ReplyServiceImpl done
+Event: 1.815 loading class org/edu/service/IF_ReplyService
+Event: 1.815 loading class org/edu/service/IF_ReplyService done
+Event: 1.815 loading class org/edu/aop/DebugAdvice
+Event: 1.815 loading class org/edu/aop/DebugAdvice done
+Event: 1.816 loading class org/springframework/jdbc/datasource/DataSourceTransactionManager
+Event: 1.816 loading class org/springframework/jdbc/datasource/DataSourceTransactionManager done
+
+
+Dynamic libraries:
+0x000000013f340000 - 0x000000013f389000 	C:\egov\jdk1.8.0_212\bin\javaw.exe
+0x0000000077700000 - 0x000000007789f000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00000000775e0000 - 0x00000000776ff000 	C:\Windows\system32\kernel32.dll
+0x000007fefd4c0000 - 0x000007fefd527000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feff010000 - 0x000007feff0eb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefef70000 - 0x000007feff00f000 	C:\Windows\system32\msvcrt.dll
+0x000007feff8a0000 - 0x000007feff8bf000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe890000 - 0x000007fefe9bc000 	C:\Windows\system32\RPCRT4.dll
+0x00000000774e0000 - 0x00000000775db000 	C:\Windows\system32\USER32.dll
+0x000007fefea50000 - 0x000007fefeab7000 	C:\Windows\system32\GDI32.dll
+0x000007fefed10000 - 0x000007fefed1e000 	C:\Windows\system32\LPK.dll
+0x000007fefedc0000 - 0x000007fefee8b000 	C:\Windows\system32\USP10.dll
+0x000007fefbca0000 - 0x000007fefbe95000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845\COMCTL32.dll
+0x000007fefe680000 - 0x000007fefe6f1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefe9c0000 - 0x000007fefe9ee000 	C:\Windows\system32\IMM32.DLL
+0x000007feff8c0000 - 0x000007feff9cb000 	C:\Windows\system32\MSCTF.dll
+0x000000006fcd0000 - 0x000000006fda2000 	C:\egov\jdk1.8.0_212\jre\bin\msvcr100.dll
+0x000000006f410000 - 0x000000006fcd0000 	C:\egov\jdk1.8.0_212\jre\bin\server\jvm.dll
+0x000007fef8c60000 - 0x000007fef8c69000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefeac0000 - 0x000007fefeb0d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe670000 - 0x000007fefe678000 	C:\Windows\system32\NSI.dll
+0x000007fef9390000 - 0x000007fef93cb000 	C:\Windows\system32\WINMM.dll
+0x000007fefc330000 - 0x000007fefc33c000 	C:\Windows\system32\VERSION.dll
+0x00000000778b0000 - 0x00000000778b7000 	C:\Windows\system32\PSAPI.DLL
+0x000007fef6710000 - 0x000007fef671f000 	C:\egov\jdk1.8.0_212\jre\bin\verify.dll
+0x000007fef52b0000 - 0x000007fef52d9000 	C:\egov\jdk1.8.0_212\jre\bin\java.dll
+0x000007fef5290000 - 0x000007fef52a6000 	C:\egov\jdk1.8.0_212\jre\bin\zip.dll
+0x000007fefd610000 - 0x000007fefe39b000 	C:\Windows\system32\SHELL32.dll
+0x000007fefeb10000 - 0x000007fefed0f000 	C:\Windows\system32\ole32.dll
+0x000007fefd250000 - 0x000007fefd25f000 	C:\Windows\system32\profapi.dll
+0x000007fef5270000 - 0x000007fef528a000 	C:\egov\jdk1.8.0_212\jre\bin\net.dll
+0x000007fefe700000 - 0x000007fefe88a000 	C:\Windows\system32\urlmon.dll
+0x000007fefd5b0000 - 0x000007fefd5b4000 	C:\Windows\system32\api-ms-win-downlevel-ole32-l1-1-0.dll
+0x000007fefd530000 - 0x000007fefd534000 	C:\Windows\system32\api-ms-win-downlevel-shlwapi-l1-1-0.dll
+0x000007fefd600000 - 0x000007fefd605000 	C:\Windows\system32\api-ms-win-downlevel-advapi32-l1-1-0.dll
+0x000007fefd5d0000 - 0x000007fefd5d4000 	C:\Windows\system32\api-ms-win-downlevel-user32-l1-1-0.dll
+0x000007fefd580000 - 0x000007fefd584000 	C:\Windows\system32\api-ms-win-downlevel-version-l1-1-0.dll
+0x000007fefd5c0000 - 0x000007fefd5c3000 	C:\Windows\system32\api-ms-win-downlevel-normaliz-l1-1-0.dll
+0x00000000778a0000 - 0x00000000778a3000 	C:\Windows\system32\normaliz.DLL
+0x000007fefe3a0000 - 0x000007fefe66c000 	C:\Windows\system32\iertutil.dll
+0x000007feff190000 - 0x000007feff63c000 	C:\Windows\system32\WININET.dll
+0x000007fefd590000 - 0x000007fefd5af000 	C:\Windows\system32\USERENV.dll
+0x000007fefca80000 - 0x000007fefcad5000 	C:\Windows\system32\mswsock.dll
+0x000007fefcc40000 - 0x000007fefcc47000 	C:\Windows\System32\wship6.dll
+0x000007fee9a00000 - 0x000007fee9a14000 	C:\egov\jdk1.8.0_212\jre\bin\sunec.dll
+0x000007fefcae0000 - 0x000007fefcaf8000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefc6b0000 - 0x000007fefc6f7000 	C:\Windows\system32\rsaenh.dll
+0x000007fefd0b0000 - 0x000007fefd0bf000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007fefadb0000 - 0x000007fefadd7000 	C:\Windows\system32\IPHLPAPI.DLL
+0x000007fefada0000 - 0x000007fefadab000 	C:\Windows\system32\WINNSI.DLL
+0x000007fefaae0000 - 0x000007fefaaf1000 	C:\Windows\system32\dhcpcsvc6.DLL
+0x000007fefaa60000 - 0x000007fefaa78000 	C:\Windows\system32\dhcpcsvc.DLL
+0x000007fef5250000 - 0x000007fef5261000 	C:\egov\jdk1.8.0_212\jre\bin\nio.dll
+0x000007fee9900000 - 0x000007fee990b000 	C:\egov\jdk1.8.0_212\jre\bin\sunmscapi.dll
+0x000007fefd270000 - 0x000007fefd3dd000 	C:\Windows\system32\CRYPT32.dll
+0x000007fefd260000 - 0x000007fefd26f000 	C:\Windows\system32\MSASN1.dll
+0x000007fefc400000 - 0x000007fefc407000 	C:\Windows\System32\wshtcpip.dll
+0x000007fefc970000 - 0x000007fefc9cb000 	C:\Windows\system32\DNSAPI.dll
+0x000007fefa450000 - 0x000007fefa458000 	C:\Windows\system32\rasadhlp.dll
+0x000007fefab90000 - 0x000007fefabe3000 	C:\Windows\System32\fwpuclnt.dll
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=UTF-8 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 51341 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test org.edu.test.DataSourceTest:testSelectMember
+java_class_path (initial): C:\egov\workspace\Komyunghak\target\test-classes;C:\egov\workspace\Komyunghak\target\classes;C:\egov\workspace\Komyunghak\src\main\webapp\WEB-INF\lib\webapp-runner-8.0.33.0.jar;C:\egov\workspace\Komyunghak\src\main\webapp\WEB-INF\lib\log4j-1.3alpha-8.jar;C:\egov\repository\org\springframework\spring-context\4.3.22.RELEASE\spring-context-4.3.22.RELEASE.jar;C:\egov\repository\org\springframework\spring-aop\4.3.22.RELEASE\spring-aop-4.3.22.RELEASE.jar;C:\egov\repository\org\springframework\spring-beans\4.3.22.RELEASE\spring-beans-4.3.22.RELEASE.jar;C:\egov\repository\org\springframework\spring-core\4.3.22.RELEASE\spring-core-4.3.22.RELEASE.jar;C:\egov\repository\org\springframework\spring-expression\4.3.22.RELEASE\spring-expression-4.3.22.RELEASE.jar;C:\egov\repository\org\springframework\spring-webmvc\4.3.22.RELEASE\spring-webmvc-4.3.22.RELEASE.jar;C:\egov\repository\org\springframework\spring-web\4.3.22.RELEASE\spring-web-4.3.22.RELEASE.jar;C:\egov\repository\org\aspectj\aspectjrt\1.8.9\aspectjrt-1.8.9.jar;C:\egov\repository\org\slf4j\slf4j-api\1.6.6\slf4j-api-1.6.6.jar;C:\egov\repository\org\slf4j\jcl-over-slf4j\1.6.6\jcl-over-slf4j-1.6.6.jar;C:\egov\repository\org\slf4j\slf4j-log4j12\1.6.6\slf4j-log4j12-1.6.6.jar;C:\egov\repository\log4j\log4j\1.2.15\log4j-1.2.15.jar;C:\egov\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\egov\repository\javax\servlet\javax.servlet-api\3.0.1\javax.servlet-api-3.0.1.jar;C:\egov\repository\javax\servlet\jsp\jsp-api\2.1\jsp-api-2.1.jar;C:\egov\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\egov\repository\junit\junit\4.12\junit-4.12.jar;C:\egov\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\egov\repository\org\springframework\spring-test\4.3.22.RELEASE\spring-test-4.3.22.RELEASE.jar;C:\egov\repository\commons-net\commons-net\3.6\commons-net-3.6.jar;C:\egov\repository\org\aspectj\aspectjweaver\1.8.9\aspectjweaver-1.8.9.jar;C:\egov\repository\org\springframework\spring-jdb
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\JAVA\jdk1.8.0_212\bin
+PATH=C:\oraclexe\app\oracle\product\11.2.0\server\bin;;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\JAVA\jdk1.8.0_212\bin;C:\Program Files\Git\cmd;C:\Program Files\Bandizip\
+USERNAME=hu-412
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.24545)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 4115320k(291060k free), swap 8496944k(4868k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.212-b04) for windows-amd64 JRE (1.8.0_212-1-ojdkbuild-b04), built on Apr 23 2019 06:07:37 by "Administrator" with MS VC++ 10.0 (VS2010)
+
+time: Thu Jul 23 11:49:06 2020
+timezone: 대한민국 표준시
+elapsed time: 1 seconds (0d 0h 0m 1s)
+
