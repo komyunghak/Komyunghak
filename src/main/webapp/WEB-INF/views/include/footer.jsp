@@ -27,7 +27,7 @@
 <h2 class="hdd">빠른 링크 : 전화 문의,카카오톡,오시는 길,꼭대기로</h2>
 <div class="quick_area">
    <ul class="quick_list">
-      <li><a href="/resources/home/tel:010-1234-5678"><h3>전화 문의</h3><p>010-1234-5678</p></a></li>
+      <li><a href="/resources/home/tel:010-1234-5678"><h3>전화 문의</h3><p>010-4665-7836</p></a></li>
       <li><a href="/resources/home/javascript:;"><h3>카카오톡 <em>상담</em></h3><p>1:1상담</p></a></li>
       <li><a href="/resources/home/javascript:;"><h3 class="to_contact">오시는 길</h3></a></li>
    </ul>
@@ -53,9 +53,9 @@
       <p class="btn_xpop"><a href="#" onclick="$(this).parent().parent().parent().hide();">닫기</a></p>
       <ul class="pop_list">
          <li>
-            <h2 class="tit_pop">OOOO OOOOO</h2>
+            <h2 class="tit_pop"></h2>
             <img class="pop_img"src="/resources/home/img/img_pop1_1.jpg" alt="OOOO OOOOO" />
-            <div class="pop_txt"><p>OOOO OOOOOOOOO OOOOO. <br>OOOO OOOOOOOOO OOOOOOOOO OOOOOOOOO OOOOOOOOO OOOOOOOOO OOOOO. </p></div>
+            <div class="pop_txt"><p><br></p></div>
          </li>
       </ul>      
    </div>
@@ -68,14 +68,14 @@
       <p class="btn_xpop"><a href="#" onclick="$(this).parent().parent().parent().hide();">닫기</a></p>
       <ul class="pop_list">
          <li>
-            <h2 class="tit_pop">OOOO OOOOO</h2>
+            <h2 class="tit_pop"></h2>
             <img class="pop_img"src="/resources/home/img/img_pop2_1.jpg" alt="OOOO OOOOO" />
-            <div class="pop_txt"><p>OOOO OOOOOOOOO OOOOOOOOO OOOOO. <br> OOOO OOOOOOOOO OOOOOOOOO OOOOO. </p></div>
+            <div class="pop_txt"><p><br></p></div>
          </li>
          <li>
             <h2 class="tit_pop">OOOO OOOOO</h2>
             <img class="pop_img"src="/resources/home/img/img_pop2_2.jpg" alt="OOOO OOOOO" />
-            <div class="pop_txt"><p>OOOO OOOOOOOOO OOOOO.<br>OOOO OOOOOOOOO OOOOOOOOO OOOOOOOOO OOOOO.</p></div>
+            <div class="pop_txt"><p><br></p></div>
          </li>
       </ul>      
    </div>
@@ -90,7 +90,7 @@
          <li>
             <h2 class="tit_pop">OOOO OOOOO</h2>
             <img class="pop_img"src="/resources/home/img/img_pop3_1.jpg" alt="OOOO OOOOO" />
-            <div class="pop_txt"><p>OOOO OOOOOOOOO OOOOOOOOO OOOOO.<br>OOOO OOOOO, OOOO OOOOO, OOOO OOOOOOOOO OOOOO.</p></div>
+            <div class="pop_txt"><p><br></p></div>
          </li>
       </ul>      
    </div>
