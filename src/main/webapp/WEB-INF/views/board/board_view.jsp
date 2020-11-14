@@ -27,7 +27,7 @@
 				<li class="bbs_date">조회수 : <span>${boardVO.view_count}</span></li>
 				<li class="bbs_content">
 					<div class="editer_content">
-					<textarea style="width:100%;min-hight:200px;">${boardVO.content}</textarea>
+					${boardVO.content}
                     </div>
 				</li>
 				<c:if test="${boardVO.files[0] !=null}">

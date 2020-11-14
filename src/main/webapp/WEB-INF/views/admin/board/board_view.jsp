@@ -45,8 +45,7 @@
 										<div class="form-group">
 											<label>Content</label>
 											 <br>
-											 <textarea name="content" class="form-control" rows="3"
-												placeholder="Enter Writer">${boardVO.content}</textarea>
+											 ${boardVO.content}
 										</div>
 									</div>
 
