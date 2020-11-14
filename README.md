@@ -2,21 +2,21 @@
 
 ***
 6.
-5. 배경색 설정 <h1 style="background-color:tomato;">This is a heading</h1>
-4. 텍스트 정렬 <h1 style="text-align:center;">This is a heading</h1>
-3. 텍스트 글꼴변경 <h1 style="font-family:verdana;">This is a heading</h1>
-2. 텍스트 사이즈변경 <h1 style="font-size:300px;">This is a heading</h1>
-1. 텍스트 색상변경 <h1 style="color:blue;">This is a heading></h1>
+5. 배경색 설정 //<h1 style="background-color:tomato;">This is a heading</h1>
+4. 텍스트 정렬 //<h1 style="text-align:center;">This is a heading</h1>
+3. 텍스트 글꼴변경 //<h1 style="font-family:verdana;">This is a heading</h1>
+2. 텍스트 사이즈변경 //<h1 style="font-size:300px;">This is a heading</h1>
+1. 텍스트 색상변경 //<h1 style="color:blue;">This is a heading></h1>
 
 
 - p태그는 단락이며 줄바꿈을해도 줄이 바뀌지않고 쭉 이어진다.
-  여기서 줄바꿈을 이용하기위해서는 <br>태그가 있고 
-  수평선을 만드는 태그는 <hr>
+  여기서 줄바꿈을 이용하기위해서는 //<br>태그가 있고 
+  수평선을 만드는 태그는 //<hr>
   그리고 마지막으로 내가 작성하는 그대로의 코드가 나오게 만들어주는 시작태그로는 <pre>가 있다.
-- 너비 및 높이 속성 <img>태그도 포함되어야 width하고 height(픽셀) 이미지의 폭 및 높이를 지정 특성
-<img src="img_girl.jpg" width="500px" height="600px">
+- 너비 및 높이 속성 //<img>태그도 포함되어야 width하고 height(픽셀) 이미지의 폭 및 높이를 지정 특성
+//<img src="img_girl.jpg" width="500px" height="600px">
 - Src 속성 <img>태그는 HTML 페이지에 포함 된 이미지에 사용됩니다. src화상의 경로를 표시하는 속성 지정
-<img src="img_girl.jpg">
+//<img src="img_girl.jpg">
 - href 속성 <a>태그는 하이퍼 링크를 정의합니다. href속성은 링크로 이동 페이지의 URL을 지정합니다.
 <a href="https://www.myunghak.com>Visit Myunghak</a>
 -<html>요소는 HTML 페이지의 루트 요소입니다
